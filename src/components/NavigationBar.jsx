@@ -3,23 +3,14 @@ import { Link } from "react-router-dom";
 import ActiveLink from "./ActiveLink";
 import { AuthContext } from "../providers/AuthProvider";
 import "./../css/navigationBar.css";
-import {
-  FaAffiliatetheme,
-  FaBars,
-  FaBookmark,
-  FaCaretDown,
-  FaSignOutAlt,
-  FaUserCog,
-} from "react-icons/fa";
-
+import { FaBars, FaCaretDown, FaSignOutAlt } from "react-icons/fa";
+import MainLogo from "../assets/images/main_logo.png";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import { maskEmail } from "../js/maskEmail";
+import { maskedEmail } from "../js/maskedEmail";
 
 const NavigationBar = () => {
-  const { user, logout, theme, setTheme } = useContext(AuthContext);
-
-  // console.log(user);
+  const { user, logout } = useContext(AuthContext);
 
   const dropDownRef = useRef(null);
   const profileRef = useRef(null);
@@ -46,32 +37,14 @@ const NavigationBar = () => {
     logout();
   };
 
-  const toggleThemeHandler = () => {
-    if (theme) {
-      console.log("light");
-      setTheme(false);
-    } else {
-      console.log("dark");
-      setTheme(true);
-    }
-  };
-
   return (
-    <div
-      className={`container-fluid mx-0 ${
-        theme ? "bg-dark-secondary" : "bg_cream_orange_01"
-      }`}
-      id="top"
-    >
+    <div className={`container-fluid mx-0 main_header_bg`} id="top">
       <nav className="container navbar navbar-expand-lg py-4">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <h4
-              className={`fw-bolder pacifico-font ${
-                theme ? "text-white" : "text-dark"
-              }`}
-            >
-              Robotopia<span className="theme-color">.</span>
+            <h4 className="fw-bold orbitron-font text-white d-flex align-items-center gap-2">
+              <img src={MainLogo} className="logo-img" />
+              <span>Robotopia</span>
             </h4>
           </Link>
           <button
@@ -83,9 +56,7 @@ const NavigationBar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span
-              className={`fs-hamburger ${theme ? "color-white" : "gray-02"}`}
-            >
+            <span className={`fs-hamburger color-white`}>
               <FaBars />
             </span>
           </button>
@@ -93,31 +64,23 @@ const NavigationBar = () => {
             className="collapse navbar-collapse justify-content"
             id="navbarNavAltMarkup"
           >
-            <div className="navbar-nav d-flex align-items-center justify-content-lg-between w-100">
-              <div className="balancer"></div>
-
+            <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-end gap-lg-4 w-100">
               <div className="links d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center gap-4 py-5 py-lg-0">
                 <ActiveLink
                   to="/"
-                  classes={`fs-14 text-decoration-none  ${
-                    theme ? "text-white" : "gray-01"
-                  }`}
+                  classes={`fs-14 text-decoration-none text-white`}
                 >
                   Home
                 </ActiveLink>
                 <ActiveLink
                   to="/blogs"
-                  classes={`fs-14 text-decoration-none  ${
-                    theme ? "text-white" : "gray-01"
-                  }`}
+                  classes={`fs-14 text-decoration-none text-white`}
                 >
                   Blogs
                 </ActiveLink>
                 <ActiveLink
                   to="/aboutus"
-                  classes={`fs-14 text-decoration-none  ${
-                    theme ? "text-white" : "gray-01"
-                  }`}
+                  classes={`fs-14 text-decoration-none text-white`}
                 >
                   About Us
                 </ActiveLink>
@@ -126,7 +89,6 @@ const NavigationBar = () => {
               <div className="button-box d-flex gap-3 align-items-center">
                 {user ? (
                   <>
-                    {/* <span className="">{user.displayName}</span> */}
                     <button
                       className="profile_button border-0 bg-transparent"
                       onClick={profileButtonClickHandler}
@@ -135,9 +97,9 @@ const NavigationBar = () => {
                     >
                       <img
                         src={user.photoURL}
-                        className="user-image-nav rounded-circle theme-border2"
+                        className="user-image-nav rounded-circle"
                       />
-                      <span className={`${theme ? "color-white" : ""}`}>
+                      <span className="color-white">
                         <FaCaretDown />
                       </span>
                     </button>
@@ -145,6 +107,7 @@ const NavigationBar = () => {
                     <ReactTooltip
                       anchorId="app-title"
                       place="left"
+                      className="bg-white text-primary"
                       content={user.displayName}
                     />
 
@@ -154,53 +117,16 @@ const NavigationBar = () => {
                         <span className="d-flex justify-content-start px-3">
                           <img
                             src={user.photoURL}
-                            className="user-image-nav rounded-circle theme-border2"
+                            className="user-image-nav rounded-circle"
                           />
                         </span>
                         <span className="border-bottom pb-3 px-3">
                           {user.email
-                            ? maskEmail(user.email)
+                            ? maskedEmail(user.email)
                             : user.displayName}
                         </span>
                       </div>
 
-                      {/* <button className="py-2 px-4 dropdown-button d-flex justify-content-between align-items-center bg-transparent border-0 border-bottom">
-                        <span className="theme-color">
-                          <FaUserCog />
-                        </span>
-                        View Profile
-                      </button>
-                      <button className="py-2 px-4 dropdown-button d-flex justify-content-between align-items-center bg-transparent border-0 border-bottom">
-                        <span className="theme-color">
-                          <FaBookmark />
-                        </span>
-                        Favorites
-                      </button> */}
-                      <button className="py-2 px-4 dropdown-button d-flex justify-content-between align-items-center bg-transparent border-0 border-bottom">
-                        <span className="theme-color">
-                          <FaAffiliatetheme />
-                        </span>
-
-                        <div
-                          className="form-check form-switch mx-0 px-0"
-                          id="theme-id"
-                        >
-                          <input
-                            className="form-check-input mx-0 px-0"
-                            type="checkbox"
-                            role="switch"
-                            id="flexSwitchCheckChecked"
-                            onChange={toggleThemeHandler}
-                            // unchecked
-                          />
-                        </div>
-                        <ReactTooltip
-                          anchorId="theme-id"
-                          place="left"
-                          content={theme ? "Theme [dark]" : "Theme [light]"}
-                        />
-                      </button>
-                      {/*  */}
                       <button
                         className="py-2 px-4 dropdown-button d-flex justify-content-between align-items-center bg-transparent border-0 border-bottom"
                         onClick={logoutHandler}
@@ -215,13 +141,8 @@ const NavigationBar = () => {
                 ) : (
                   <>
                     <Link to="/login">
-                      <button className="theme-button white-mbg text-dark rounded border-0 px-3 py-2 fw-bold">
-                        Login
-                      </button>
-                    </Link>
-                    <Link to="/signup">
-                      <button className="theme-button rounded border-0 px-3 py-2 fw-bold">
-                        Sign Up
+                      <button className="theme-button login-button text-white rounded text-dark border-0 px-3 py-2 fw-bold">
+                        <span>Sign In</span>
                       </button>
                     </Link>
                   </>

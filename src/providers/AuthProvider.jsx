@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
@@ -14,10 +15,12 @@ export const AuthContext = createContext();
 
 const auth = getAuth(app);
 
+// Google auth provider
+const googleProvider = new GoogleAuthProvider();
+
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState(false);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -31,7 +34,6 @@ const AuthProvider = ({ children }) => {
 
   const updateUser = (displayName, photoURL) => {
     setLoading(true);
-    // console.log(auth.currentUser, displayName, photoURL);
     return updateProfile(auth.currentUser, {
       displayName: displayName,
       photoURL: photoURL,
@@ -43,18 +45,12 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  //   const githubPopUpSignIn = () => {
-  //     setLoading(true);
-  //     return signInWithPopup(auth, githubProvider);
-  //   };
-
   const logout = () => {
     return signOut(auth);
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (loggedInUser) => {
-      // console.log("logged in user inside auth state observer", loggedInUser);
       setUser(loggedInUser);
       setLoading(false);
     });
@@ -66,8 +62,6 @@ const AuthProvider = ({ children }) => {
     user,
     loading,
     setLoading,
-    theme,
-    setTheme,
     createUser,
     login,
     updateUser,

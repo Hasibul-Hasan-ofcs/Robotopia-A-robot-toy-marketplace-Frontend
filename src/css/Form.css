@@ -1,0 +1,13 @@
+.google_login_button {
+  font-size: 16px;
+  line-height: 27px;
+  color: #e44d4d;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 2px solid #e44d4d;
+}
+
+.google_login_button:hover {
+  transform: scale(1.1);
+  color: #fff;
+  background: #e44d4d;
+}

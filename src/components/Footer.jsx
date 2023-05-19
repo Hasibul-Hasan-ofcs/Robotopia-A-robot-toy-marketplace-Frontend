@@ -4,10 +4,11 @@ import { FaFacebook } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
-// import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../providers/AuthProvider";
+import MainLogo from "../assets/images/main_logo.png";
 import { HashLink } from "react-router-hash-link";
 import { ToastContainer, toast } from "react-toastify";
-import { AuthContext } from "../providers/AuthProvider";
+import "../css/footer.css";
 
 const Footer = () => {
   const { user } = useContext(AuthContext);
@@ -28,17 +29,46 @@ const Footer = () => {
     <div className="bg-dark-01">
       <div className="container py-5 mx-auto">
         <div className="row mx-0 py-5">
-          <div className="col-12 col-lg-6 px-2 px-lg-0 pb-5 pb-lg-0">
+          <div className="col-12 col-lg-6 px-2 px-lg-0 pb-5 pb-lg-0 d-flex flex-column justify-content-between gap-4">
             <Link className="navbar-brand d-block pb-3" to="/">
-              <h4 className="fw-bolder text-white pacifico-font">
-                Robotopia<span className="theme-color">.</span>
-              </h4>
+              <h2 className="fw-bold orbitron-font text-white d-flex align-items-center gap-2">
+                <img src={MainLogo} className="logo-img" />
+                <span>Robotopia</span>
+              </h2>
             </Link>
-            <p className="gray-02 fs-14 pe-2 pe-lg-5 me-0 me-lg-5 pb-3">
-              Discover the Excellence of Japanese Culinary Craftsmanship; Where
-              Every Dish is a Work of Art. Let the Masterful Techniques and
-              Unmatched Attention to Detail Take You on a Gastronomical Journey.
-            </p>
+            <div>
+              <p className="text-white">Social Links</p>
+              <div className="links d-flex gap-3">
+                <a
+                  href="https://www.facebook.com"
+                  className="footer_link rounded-circle"
+                  style={{ color: "#1297F6" }}
+                >
+                  <FaFacebook />
+                </a>
+                <a
+                  href="https://www.twitter.com"
+                  className="footer_link rounded-circle"
+                  style={{ color: "#1DA1F2" }}
+                >
+                  <FaTwitter />
+                </a>
+                <a
+                  href="https://www.youtube.com"
+                  className="footer_link rounded-circle"
+                  style={{ color: "#DD2724" }}
+                >
+                  <FaYoutube />
+                </a>
+                <a
+                  href="https://dribbble.com/"
+                  className="footer_link rounded-circle"
+                  style={{ color: "#E24481" }}
+                >
+                  <FaDribbble />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="col-12 col-md-6 col-lg-2 px-2 px-lg-0 pb-5 pb-lg-0">
             <p className="text-white">About</p>
@@ -101,7 +131,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-2 px-2 px-lg-0 pb-5 pb-lg-0">
-            <p className="text-white">Connections</p>
+            {/* <p className="text-white">Connections</p>
             <div className="links d-flex flex-column gap-3">
               <a
                 href="https://www.facebook.com"
@@ -127,7 +157,7 @@ const Footer = () => {
               >
                 <FaDribbble /> Dribble
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         <hr className="gray-02" />

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, rgb(19, 26, 36), #1a1919);
+}
+
 ::-webkit-scrollbar {
   width: 13px;
   background-color: #f5f5f5;
@@ -21,6 +25,7 @@ font-family: "Poppins", sans-serif;
 
 body,
 html {
+  font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -36,8 +41,8 @@ html {
   font-family: "Teko", sans-serif;
 }
 
-.bg_cream_orange_01 {
-  background-color: #f5f7f3;
+.main_header_bg {
+  background-color: #242327;
 }
 
 .text_cream_orange_01 {
@@ -109,14 +114,12 @@ h4 {
   min-height: 250px;
 }
 
-.active {
-  color: #f78038 !important;
-  transform: scale(1.2);
-  border-bottom: 2px solid #f78038;
-  /* background-color: #f7f7f7; */
+.active_route {
+  color: #237bff !important;
+  transform: scale(1.3);
   padding: 1px 4px;
-  border-radius: 4px;
   font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .aspect1b1 {
@@ -133,8 +136,9 @@ h4 {
   font-size: 16px;
   line-height: 27px;
   color: #ffffff;
-  background: linear-gradient(to top, #df4a1d 0%, #f78038 100%);
+  background: linear-gradient(to top, #4e95ff 0%, #237bff 100%);
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: skewX(-15deg) !important;
 }
 
 .white-mbg {
@@ -142,11 +146,11 @@ h4 {
 }
 
 .theme-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 .theme-color {
-  color: #f78038;
+  color: #237bff;
 }
 
 .theme-border {
@@ -186,7 +190,7 @@ h4 {
 
 .header_text {
   font-weight: 800;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .social-links {

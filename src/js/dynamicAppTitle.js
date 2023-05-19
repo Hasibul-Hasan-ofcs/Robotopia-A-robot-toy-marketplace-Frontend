@@ -1,5 +1,5 @@
 const dynamicAppTitle = (appName) => {
-  document.title = `Chefista | ${appName}`;
+  document.title = `Robotopia | ${appName}`;
 };
 
 export default dynamicAppTitle;

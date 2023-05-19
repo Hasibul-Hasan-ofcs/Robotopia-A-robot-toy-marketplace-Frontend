@@ -1,0 +1,14 @@
+.footer_link {
+  font-size: 20px;
+  height: 28px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.footer_link:hover {
+  transform: scale(1.3);
+}

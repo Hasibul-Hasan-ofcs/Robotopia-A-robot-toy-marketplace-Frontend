@@ -6,7 +6,7 @@ const ActiveLink = ({ to, classes, children }) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        isActive ? `active ${classes}` : `${classes}`
+        isActive ? `active_route ${classes}` : `${classes}`
       }
     >
       {children}

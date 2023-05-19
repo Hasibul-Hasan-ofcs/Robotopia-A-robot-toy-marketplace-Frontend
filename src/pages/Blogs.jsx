@@ -27,7 +27,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className={`${theme ? "bg-dark-secondary" : "bg_cream_orange_01"}`}>
+    <div className={`${theme ? "bg-dark-secondary" : "main_header_bg"}`}>
       <h1 className="text-center py-5 theme-color pacifico-font">Blogs</h1>
       {/* <div className="container mx-auto d-flex align-items-center justify-content-center">
         <Pdf

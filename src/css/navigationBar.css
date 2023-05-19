@@ -3,6 +3,20 @@
   width: 40px;
 }
 
+.logo-img {
+  height: 30px;
+  width: auto;
+}
+
+.login-button {
+  background: transparent !important;
+  border: 2px solid #237bff !important;
+}
+
+.login-button:hover {
+  background: linear-gradient(to top, #4e95ff 0%, #237bff 100%) !important;
+}
+
 .profile_button {
   position: relative;
 }
