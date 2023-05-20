@@ -10,11 +10,10 @@ const ErrorPage = () => {
     <div className="container min-vh-100 flex-column d-flex align-items-center justify-content-center py-5">
       <div className="container-fluid d-flex align-items-center justify-content-center flex-column">
         <img className="img-fluid w-50" src={PNF404} />
-        {/* <h1 className="theme-color py-5">404! Page Not Found.</h1> */}
       </div>
       <Link className="button-box" to="/">
         <button className="theme-button rounded border-0 px-3 py-2 fw-bold">
-          Go Back to Home page
+          &larr; Back to Homepage
         </button>
       </Link>
     </div>

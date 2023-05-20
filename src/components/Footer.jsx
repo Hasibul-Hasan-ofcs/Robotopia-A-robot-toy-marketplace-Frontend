@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
+import "../css/footer.css";
+import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { FaInstagram, FaSkype, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaDribbble } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaDribbble } from "react-icons/fa";
 import { AuthContext } from "../providers/AuthProvider";
 import MainLogo from "../assets/images/main_logo.png";
-import { HashLink } from "react-router-hash-link";
-import { ToastContainer, toast } from "react-toastify";
-import "../css/footer.css";
+import "../css/glassmorphism.css";
 
 const Footer = () => {
   const { user } = useContext(AuthContext);
 
-  const loggedInHandler = (e) => {
+  const loggedInHandler = () => {
     toast.warning("You are already logged in", {
       position: "top-right",
       autoClose: 5000,
@@ -25,64 +26,33 @@ const Footer = () => {
       theme: "light",
     });
   };
+
   return (
-    <div className="bg-dark-01">
-      <div className="container py-5 mx-auto">
+    <div className="dark_bg01">
+      <div className="container mx-auto py-5 ">
+        <Link className="navbar-brand d-block pb-3 pt-5" to="/">
+          <h2 className="fw-bold orbitron-font text-white d-flex align-items-center gap-2">
+            <img src={MainLogo} className="logo-img2" />
+            <span>Robotopia</span>
+          </h2>
+        </Link>
         <div className="row mx-0 py-5">
-          <div className="col-12 col-lg-6 px-2 px-lg-0 pb-5 pb-lg-0 d-flex flex-column justify-content-between gap-4">
-            <Link className="navbar-brand d-block pb-3" to="/">
-              <h2 className="fw-bold orbitron-font text-white d-flex align-items-center gap-2">
-                <img src={MainLogo} className="logo-img" />
-                <span>Robotopia</span>
-              </h2>
-            </Link>
-            <div>
-              <p className="text-white">Social Links</p>
-              <div className="links d-flex gap-3">
-                <a
-                  href="https://www.facebook.com"
-                  className="footer_link rounded-circle"
-                  style={{ color: "#1297F6" }}
-                >
-                  <FaFacebook />
-                </a>
-                <a
-                  href="https://www.twitter.com"
-                  className="footer_link rounded-circle"
-                  style={{ color: "#1DA1F2" }}
-                >
-                  <FaTwitter />
-                </a>
-                <a
-                  href="https://www.youtube.com"
-                  className="footer_link rounded-circle"
-                  style={{ color: "#DD2724" }}
-                >
-                  <FaYoutube />
-                </a>
-                <a
-                  href="https://dribbble.com/"
-                  className="footer_link rounded-circle"
-                  style={{ color: "#E24481" }}
-                >
-                  <FaDribbble />
-                </a>
-              </div>
-            </div>
-          </div>
           <div className="col-12 col-md-6 col-lg-2 px-2 px-lg-0 pb-5 pb-lg-0">
             <p className="text-white">About</p>
             <div className="links d-flex flex-column gap-3">
-              <a href="" className="gray-02 fs-14 text-decoration-none">
-                About Us
+              <a href="" className=" fs-14 text-decoration-none">
+                Mission and Values
               </a>
-              <a href="" className="gray-02 fs-14 text-decoration-none">
-                Latest News
+              <a href="" className=" fs-14 text-decoration-none">
+                Our Story
+              </a>
+              <a href="" className=" fs-14 text-decoration-none">
+                Team
               </a>
               {user ? (
                 <HashLink
                   to="/#top"
-                  className="gray-02 fs-14 text-decoration-none"
+                  className=" fs-14 text-decoration-none"
                   onClick={loggedInHandler}
                 >
                   Login
@@ -90,7 +60,7 @@ const Footer = () => {
               ) : (
                 <HashLink
                   to="/login#top"
-                  className="gray-02 fs-14 text-decoration-none"
+                  className=" fs-14 text-decoration-none"
                 >
                   Login
                 </HashLink>
@@ -98,7 +68,7 @@ const Footer = () => {
               {user ? (
                 <HashLink
                   to="/#top"
-                  className="gray-02 fs-14 text-decoration-none"
+                  className=" fs-14 text-decoration-none"
                   onClick={loggedInHandler}
                 >
                   Sign Up
@@ -106,7 +76,7 @@ const Footer = () => {
               ) : (
                 <HashLink
                   to="/signup#top"
-                  className="gray-02 fs-14 text-decoration-none"
+                  className=" fs-14 text-decoration-none"
                 >
                   Sign Up
                 </HashLink>
@@ -114,57 +84,121 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-2 px-2 px-lg-0 pb-5 pb-lg-0">
-            <p className="text-white">Product</p>
+            <p className="text-white">Contact Us</p>
             <div className="links d-flex flex-column gap-3">
-              <a href="" className="gray-02 fs-14 text-decoration-none">
-                Chefs
+              <a href="" className=" fs-14 text-decoration-none">
+                Customer Support
               </a>
-              <a href="" className="gray-02 fs-14 text-decoration-none">
-                Plans & Pricing
+              <a href="" className=" fs-14 text-decoration-none">
+                Sales Inquiries
               </a>
-              <a href="" className="gray-02 fs-14 text-decoration-none">
-                Customers
+              <a href="" className=" fs-14 text-decoration-none">
+                Technical Assistance
               </a>
-              <a href="" className="gray-02 fs-14 text-decoration-none">
-                Recipes
+              <a href="" className=" fs-14 text-decoration-none">
+                Physical Store Locations
               </a>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-2 px-2 px-lg-0 pb-5 pb-lg-0">
-            {/* <p className="text-white">Connections</p>
+            <p className="text-white">FAQs</p>
             <div className="links d-flex flex-column gap-3">
-              <a
-                href="https://www.facebook.com"
-                className="gray-02 fs-14 text-decoration-none d-flex align-items-center gap-2"
-              >
-                <FaFacebook /> Facebook
+              <a href="" className=" fs-14 text-decoration-none">
+                Shipping and Delivery
               </a>
-              <a
-                href="https://www.twitter.com"
-                className="gray-02 fs-14 text-decoration-none d-flex align-items-center gap-2"
-              >
-                <FaTwitter /> Twitter
+              <a href="" className=" fs-14 text-decoration-none">
+                Returns and Refunds
               </a>
-              <a
-                href="https://www.youtube.com"
-                className="gray-02 fs-14 text-decoration-none d-flex align-items-center gap-2"
-              >
-                <FaYoutube /> Youtube
+              <a href="" className=" fs-14 text-decoration-none">
+                Product Warranty
               </a>
-              <a
-                href="https://dribbble.com/"
-                className="gray-02 fs-14 text-decoration-none d-flex align-items-center gap-2"
-              >
-                <FaDribbble /> Dribble
+              <a href="" className=" fs-14 text-decoration-none">
+                Assembly and Setup
               </a>
-            </div> */}
+            </div>
+          </div>
+          <div className="col-12 col-md-6 col-lg-2 px-2 px-lg-0 pb-5 pb-lg-0">
+            <p className="text-white">Product Categories</p>
+            <div className="links d-flex flex-column gap-3">
+              <a href="" className=" fs-14 text-decoration-none">
+                Educational Robots
+              </a>
+              <a href="" className=" fs-14 text-decoration-none">
+                Programmable Robots
+              </a>
+              <a href="" className=" fs-14 text-decoration-none">
+                Remote-Controlled Robots
+              </a>
+              <a href="" className=" fs-14 text-decoration-none">
+                Interactive Robots
+              </a>
+            </div>
+          </div>
+
+          <div className="col-12 col-lg-4 px-2 px-lg-0 pb-5 pb-lg-0 d-flex flex-column justify-content-between gap-4">
+            <div className="h-100 glass-box p-3">
+              <p className="pb-0 mb-0 text-end">+1 (555) 123-4567</p>
+              <p className="pb-3 text-end">info@robotopia.com</p>
+              <p className="pb-0 mb-0 text-end">5935</p>
+              <p className="pb-0 mb-0 text-end">Main Street Cityville, USA</p>
+            </div>
+            <div>
+              <div className="links d-flex flex-wrap gap-3">
+                <a
+                  href="https://www.facebook.com"
+                  className="footer_link text-dark rounded"
+                >
+                  <FaFacebook />
+                </a>
+                <a
+                  href="https://www.twitter.com"
+                  className="footer_link text-dark rounded"
+                >
+                  <FaTwitter />
+                </a>
+                <a
+                  href="https://www.youtube.com"
+                  className="footer_link text-dark rounded"
+                >
+                  <FaYoutube />
+                </a>
+                <a
+                  href="https://dribbble.com/"
+                  className="footer_link text-dark rounded"
+                >
+                  <FaDribbble />
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  className="footer_link text-dark rounded"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://www.skype.com/"
+                  className="footer_link text-dark rounded"
+                >
+                  <FaSkype />
+                </a>
+                <a
+                  href="https://www.whatsapp.com/"
+                  className="footer_link text-dark rounded"
+                >
+                  <FaWhatsapp />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <hr className="gray-02" />
-        <div className="d-flex flex-column flex-lg-row gap-3 gap-lg-0 justify-content-center px-2 px-lg-0 pt-4 pb-5">
-          <p className="gray-02 fs-14 text-decoration-none">
+
+        <div className="d-flex flex-column flex-lg-row gap-3 gap-lg-0 justify-content-between px-2 px-lg-0 pt-4 pb-1">
+          <p className="fs-14">
             @2023 <span className="fw-bolder">Robotopia</span>. All Rights
             Reserved
+          </p>
+          <p className="fs-14 d-flex gap-3 flex-wrap">
+            <a className="">Terms and conditions</a>
+            <a className="">Privacy policy</a>
           </p>
         </div>
       </div>
