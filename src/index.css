@@ -19,10 +19,6 @@
   border: solid 3px transparent;
 }
 
-/* font-families
-font-family: "Poppins", sans-serif;
-*/
-
 body,
 html {
   font-family: "Roboto", sans-serif;
@@ -71,32 +67,16 @@ a {
   cursor: pointer;
 }
 
-.theme-bg-01 {
-  background-color: #f9f9ff;
-}
-
-.bg- {
-  background-color: #f4f4f4;
-}
-
 .dark_bg01 {
   background-color: #1a1919;
 }
 
-.gray-01 {
-  color: #757575;
-}
-
-.dark-01 {
-  color: #474747;
-}
-
-.dark-02 {
-  color: #302d2d;
-}
-
 .fs-14 {
   font-size: 14px;
+}
+
+.fs-20 {
+  font-size: 20px;
 }
 
 .fs-36 {
@@ -197,11 +177,11 @@ a {
 }
 
 .banner-common {
-  background: url("./assets/All Images/Vector.png") left bottom no-repeat,
-    linear-gradient(
-      90deg,
-      rgba(126, 144, 254, 0.05) 0%,
-      rgba(152, 115, 255, 0.05) 100%
-    ),
-    url("./assets/All Images/Vector-1.png") right top no-repeat;
+  /* background: linear-gradient(to top left, #237bff, #4e95ff); */
+  background: radial-gradient(#237bff 15%, transparent 16%) 0 0,
+    radial-gradient(#237bff 15%, transparent 16%) 8px 8px,
+    radial-gradient(#4e95ff7a 15%, transparent 20%) 0 1px,
+    radial-gradient(#4e95ff7a 15%, transparent 20%) 8px 9px;
+  background-color: #4e95ff;
+  background-size: 16px 16px;
 }
