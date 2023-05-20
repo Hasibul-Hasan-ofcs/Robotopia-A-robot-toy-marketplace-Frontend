@@ -28,8 +28,8 @@
   height: 250px;
 }
 
-.slick-slide {
-  transform: none;
+.h-350 {
+  height: 350px !important;
 }
 
 .slick-dots li button::before {
