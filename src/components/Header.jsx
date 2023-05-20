@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <div className="dark_bg01">
       <div className="container mx-auto d-flex flex-column">
-        <div className="carousal-div  h-450">
+        <div className="carousal-div h-450">
           <Slider {...settings}>
             <div className="glass-box m-4 p-3 h-350">
               <img src={Robo1} className="h-100 w-100 rounded" />
