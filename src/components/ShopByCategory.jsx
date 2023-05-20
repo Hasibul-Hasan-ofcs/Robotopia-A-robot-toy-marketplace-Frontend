@@ -31,9 +31,10 @@ const ShopByCategory = () => {
                     key={indx}
                   >
                     <img src={el.img} className="h-250 rounded shp-img" />
-                    <h4 className="text-white pt-3">{el.name}</h4>
-                    <h2 className="theme-color">{el.price}$</h2>
+                    <h4 className="teko-font text-white pt-3">{el.name}</h4>
+                    <h3 className="teko-font theme-color">{el.price}$</h3>
                     <p>rating: {el.rating}</p>
+
                     <Link className="theme-button rounded text-center">
                       View Details
                     </Link>
@@ -51,8 +52,8 @@ const ShopByCategory = () => {
                     key={indx}
                   >
                     <img src={el.img} className="h-250 rounded shp-img" />
-                    <h4 className="text-white pt-3">{el.name}</h4>
-                    <h2 className="theme-color">{el.price}$</h2>
+                    <h4 className="teko-font text-white pt-3">{el.name}</h4>
+                    <h3 className="teko-font theme-color">{el.price}$</h3>
                     <p>rating: {el.rating}</p>
                     <Link className="theme-button rounded text-center">
                       View Details
@@ -71,8 +72,8 @@ const ShopByCategory = () => {
                     key={indx}
                   >
                     <img src={el.img} className="h-250 rounded shp-img" />
-                    <h4 className="text-white pt-3">{el.name}</h4>
-                    <h2 className="theme-color">{el.price}$</h2>
+                    <h4 className="teko-font text-white pt-3">{el.name}</h4>
+                    <h3 className="teko-font theme-color">{el.price}$</h3>
                     <p>rating: {el.rating}</p>
                     <Link className="theme-button rounded text-center">
                       View Details

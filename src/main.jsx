@@ -5,10 +5,18 @@ import App from "./App.jsx";
 import "./index.css";
 import Home from "./pages/Home.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import AllToys from "./pages/AllToys.jsx";
+import MyToys from "./pages/MyToys.jsx";
+import AddToy from "./pages/AddToy.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
+
+// backend server
+// https://robotopia-server.vercel.app
 
 const router = createBrowserRouter([
   {
@@ -18,6 +26,26 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/all-toys",
+        element: <AllToys></AllToys>,
+      },
+      {
+        path: "/my-toys",
+        element: <MyToys></MyToys>,
+      },
+      {
+        path: "/add-toy",
+        element: (
+          <PrivateRoute>
+            <AddToy></AddToy>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/blogs",

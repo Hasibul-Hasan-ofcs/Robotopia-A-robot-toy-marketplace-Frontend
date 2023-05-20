@@ -67,9 +67,10 @@ const Blogs = () => {
             ))}
           </div>
           <div className="col-12 col-lg-4">
+            <h1 className="teko-font py-4">Latest</h1>
             {latest.map((el, indx) => (
               <div
-                className="cardBlog p-4 my-4 d-flex flex-column gap-3 rounded-4 shadow"
+                className="cardBlog p-4 mb-4 d-flex flex-column gap-3 rounded-4 shadow"
                 key={indx}
               >
                 <img src={el.img} className="w-100 rounded" />

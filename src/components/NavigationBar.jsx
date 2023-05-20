@@ -73,13 +73,31 @@ const NavigationBar = () => {
                   Home
                 </ActiveLink>
                 <ActiveLink
+                  to="/all-toys"
+                  classes={`fs-14 text-decoration-none text-white`}
+                >
+                  All Toys
+                </ActiveLink>
+                <ActiveLink
+                  to="/my-toys"
+                  classes={`fs-14 text-decoration-none text-white`}
+                >
+                  My Toys
+                </ActiveLink>
+                <ActiveLink
+                  to="/add-toy"
+                  classes={`fs-14 text-decoration-none text-white`}
+                >
+                  Add A Toy
+                </ActiveLink>
+                <ActiveLink
                   to="/blogs"
                   classes={`fs-14 text-decoration-none text-white`}
                 >
                   Blogs
                 </ActiveLink>
                 <ActiveLink
-                  to="/aboutus"
+                  to="/about-us"
                   classes={`fs-14 text-decoration-none text-white`}
                 >
                   About Us
