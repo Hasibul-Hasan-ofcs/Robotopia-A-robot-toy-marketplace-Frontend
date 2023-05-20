@@ -1,0 +1,65 @@
+.h-350 {
+  height: 350px;
+  width: auto;
+}
+
+.min-h-400 {
+  min-height: 400px;
+}
+
+.h-450 {
+  height: 450px;
+}
+
+.slider-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.slick-slide {
+  padding: 0 10px; /* Set the gap between images */
+  transform: perspective(1000px) rotateY(-45deg);
+}
+
+.slick-slide img {
+  /* width: 100%; */
+  /* height: auto; */
+  border-radius: 8px;
+  transition: transform 0.5s;
+}
+
+.slick-center {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.slick-slide {
+  transition: transform 0.5s;
+}
+
+.slick-active .slide:not(.slick-center) {
+  transform: scale(0.8);
+}
+
+/* getting started button */
+
+.started-div {
+  width: 200px;
+  background: linear-gradient(to top, #4e95ff 0%, #237bff 100%);
+  position: relative;
+}
+
+.gs-button {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  width: 50px;
+  border: 5px solid #237bff;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gs-button:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}

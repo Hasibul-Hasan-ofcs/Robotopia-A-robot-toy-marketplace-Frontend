@@ -38,7 +38,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <div className={`container-fluid mx-0 main_header_bg`} id="top">
+    <div className={`container-fluid mx-0 dark_bg01`} id="top">
       <nav className="container navbar navbar-expand-lg py-4">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">

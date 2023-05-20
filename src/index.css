@@ -5,7 +5,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(to bottom, rgb(19, 26, 36), #1a1919);
+  background: #1a1919;
 }
 
 ::-webkit-scrollbar {

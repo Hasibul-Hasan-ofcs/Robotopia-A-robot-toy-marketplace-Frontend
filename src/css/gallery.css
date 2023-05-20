@@ -1,22 +1,25 @@
-.glass-box {
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 16px;
+.card {
+  height: auto;
+  background: rgba(0, 0, 0, 0.14);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
 }
 
-.glass-box::after {
+.card::after {
   content: "";
-  height: 40%;
+  height: 20%;
   aspect-ratio: 1/1;
   border-radius: 100px;
   background-color: #237bff;
   filter: blur(40px);
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 10%;
+  left: 10%;
   z-index: -5;
+}
+
+.gl-img {
+  aspect-ratio: 1/1;
 }
