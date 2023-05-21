@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
+import "./../css/navigationBar.css";
 import { Link } from "react-router-dom";
 import ActiveLink from "./ActiveLink";
 import { AuthContext } from "../providers/AuthProvider";
-import "./../css/navigationBar.css";
-import { FaBars, FaCaretDown, FaSignOutAlt } from "react-icons/fa";
 import MainLogo from "../assets/images/main_logo.png";
-import "react-tooltip/dist/react-tooltip.css";
-import { Tooltip as ReactTooltip } from "react-tooltip";
+import { FaBars, FaCaretDown, FaSignOutAlt } from "react-icons/fa";
 import { maskedEmail } from "../js/maskedEmail";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 const NavigationBar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -129,19 +129,10 @@ const NavigationBar = () => {
                       content={user.displayName}
                     />
 
-                    {/* dropdown */}
                     <div className={classStateDD} ref={dropDownRef}>
                       <div className="d-flex flex-column gap-2 pt-3">
-                        <span className="d-flex justify-content-start px-3">
-                          <img
-                            src={user.photoURL}
-                            className="user-image-nav rounded-circle"
-                          />
-                        </span>
                         <span className="border-bottom pb-3 px-3">
-                          {user.email
-                            ? maskedEmail(user.email)
-                            : user.displayName}
+                          {user.displayName}
                         </span>
                       </div>
 

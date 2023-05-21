@@ -51,7 +51,7 @@ const AllToys = () => {
                 className="theme-button p-3 rounded border-0"
                 type="submit"
               >
-                Button
+                Search
               </button>
             </div>
           </div>

@@ -4,6 +4,7 @@ import dynamicAppTitle from "../js/dynamicAppTitle.js";
 import Header from "../components/Header.jsx";
 import Gallery from "../components/Gallery.jsx";
 import ShopByCategory from "../components/ShopByCategory.jsx";
+import NewsLetter from "../components/NewsLetter.jsx";
 
 const Home = () => {
   dynamicAppTitle("Home");
@@ -13,6 +14,7 @@ const Home = () => {
       <Header></Header>
       <Gallery></Gallery>
       <ShopByCategory></ShopByCategory>
+      <NewsLetter></NewsLetter>
     </div>
   );
 };

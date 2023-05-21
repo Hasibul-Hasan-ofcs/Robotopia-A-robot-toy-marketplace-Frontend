@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import dynamicAppTitle from "../js/dynamicAppTitle";
 import { Spinner } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
   dynamicAppTitle("Signup");
@@ -16,6 +18,20 @@ const Signup = () => {
   const [nameState, setNameState] = useState("");
   const [photoState, setPhotoState] = useState("");
   const [errorState, setErrorState] = useState(null);
+
+  if (errorState) {
+    toast.error("Wrong Credentials!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    setErrorState(null);
+  }
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -65,11 +81,7 @@ const Signup = () => {
       <div className="container mx-auto d-flex align-items-center justify-content-center">
         <div className="form w-100 w-lg-50 p-1 p-lg-4 mx-auto">
           <div className=" rounded-2 shadow p-5 d-flex flex-column gap-3 flex-grow-1 border">
-            {errorState && (
-              <h5 className="text-danger fw-bold text-center">{errorState}</h5>
-            )}
             <h3 className="pt-2 teko-font">Sign Up</h3>
-
             <form onSubmit={formSubmitHandler}>
               <div className="form-floating mb-3">
                 <input
@@ -138,6 +150,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
