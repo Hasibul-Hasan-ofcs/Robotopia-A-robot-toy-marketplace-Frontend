@@ -23,15 +23,21 @@ const ToyDetails = () => {
                 src={loadedData.img}
                 className="h-250 rounded shp-img my-3"
               />
-              <h3 className="teko-font">Seller: {loadedData.sellerName}</h3>
-              <h3 className="teko-font">rating: {loadedData.sellerEmail}</h3>
-              <h1 className="teko-font theme-color">{loadedData.price}$</h1>
-              <h3 className="teko-font">rating: {loadedData.rating}</h3>
               <h3 className="teko-font">
-                Available Quantity: {loadedData.availableQuantity}
+                <b>seller name:</b> {loadedData.sellerName}
               </h3>
               <h3 className="teko-font">
-                Detail Description: {loadedData.detailDescription}
+                <b>seller nmail</b> {loadedData.sellerEmail}
+              </h3>
+              <h1 className="teko-font theme-color">{loadedData.price}$</h1>
+              <h3 className="teko-font">
+                <b>rating:</b> {loadedData.rating}
+              </h3>
+              <h3 className="teko-font">
+                <b>available quantity:</b> {loadedData.availableQuantity}
+              </h3>
+              <h3 className="teko-font text-center">
+                <b>detail description:</b> {loadedData.detailDescription}
               </h3>
             </div>
           </div>

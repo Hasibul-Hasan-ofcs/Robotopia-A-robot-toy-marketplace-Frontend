@@ -22,7 +22,7 @@ const NewsLetter = () => {
 
   return (
     <div className="container-fluid newsletter mx-0 px-0">
-      <div className="container glass-bg mx-auto px-0 d-flex flex-column justify-content-center align-items-center py-5">
+      <div className="glass-bg px-0 d-flex flex-column justify-content-center align-items-center py-5">
         <h3
           className="text-white orbitron-font fw-bold px-4 py-3 my-2"
           style={{ fontSize: "30px" }}

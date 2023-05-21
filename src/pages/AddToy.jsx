@@ -2,17 +2,76 @@ import React, { useContext } from "react";
 import dynamicAppTitle from "../js/dynamicAppTitle";
 import BannerCommon from "../components/BannerCommon.jsx";
 import { AuthContext } from "../providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const AddToy = () => {
   dynamicAppTitle("Add a Toy");
 
-  const { loading } = useContext(AuthContext);
+  const { loading, user } = useContext(AuthContext);
 
-  const formSubmitHandler = () => {};
+  const navigate = useNavigate();
+
+  console.log(user.email);
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const img = form.img.value;
+    const name = form.name.value;
+    const sellername = user.displayName;
+    const selleremail = user.email;
+    const subcategory = form.subcategory.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
+
+    const data = {
+      img: img,
+      name: name,
+      sellerName: sellername,
+      sellerEmail: selleremail,
+      subCategory: subcategory,
+      price: price,
+      rating: rating,
+      availableQuantity: quantity,
+      detailDescription: description,
+    };
+
+    fetch("http://localhost:5000/toys", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data);
+
+        if (data.acknowledged === true) {
+          toast.info("Toy added Successfully!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+
+          navigate(`/toy-details/${data.insertedId}`);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div>
-      <BannerCommon pageName="Toy Details"></BannerCommon>
+      <BannerCommon pageName="Add a Toy"></BannerCommon>
 
       <div className="container mx-auto py-5">
         <div className="details-box rounded-4 border p-3 mb-4">
@@ -45,20 +104,21 @@ const AddToy = () => {
                     name="sellername"
                     className="form-control"
                     id="floatingSellerName"
-                    placeholder="Seller name"
+                    placeholder={user.displayName}
                     disabled
                   />
-                  <label htmlFor="floatingSellerName">Seller name </label>
+                  <label htmlFor="floatingSellerName">{user.displayName}</label>
                 </div>
                 <div className="form-floating my-3">
                   <input
-                    type="text"
+                    type="email"
                     name="selleremail"
                     className="form-control"
                     id="floatingSellerEmail"
-                    placeholder="Seller email"
+                    placeholder={user.email}
+                    disabled
                   />
-                  <label htmlFor="floatingSellerEmail">Seller email</label>
+                  <label htmlFor="floatingSellerEmail">{user.email}</label>
                 </div>
                 <div className="form-floating my-3">
                   <input
@@ -73,42 +133,42 @@ const AddToy = () => {
                 <div className="form-floating my-3">
                   <input
                     type="text"
-                    name="name"
+                    name="price"
                     className="form-control"
-                    id="floatingName"
-                    placeholder="your name"
+                    id="floatingPrice"
+                    placeholder="Price"
                   />
-                  <label htmlFor="floatingName">Name</label>
+                  <label htmlFor="floatingPrice">Price</label>
                 </div>
                 <div className="form-floating my-3">
                   <input
                     type="text"
-                    name="name"
+                    name="rating"
                     className="form-control"
-                    id="floatingName"
-                    placeholder="your name"
+                    id="floatingRating"
+                    placeholder="Rating"
                   />
-                  <label htmlFor="floatingName">Name</label>
+                  <label htmlFor="floatingRating">Rating</label>
                 </div>
                 <div className="form-floating my-3">
                   <input
                     type="text"
-                    name="name"
+                    name="quantity"
                     className="form-control"
-                    id="floatingName"
-                    placeholder="your name"
+                    id="floatingQuantity"
+                    placeholder="Available quantity"
                   />
-                  <label htmlFor="floatingName">Name</label>
+                  <label htmlFor="floatingQuantity">Available quantity</label>
                 </div>
                 <div className="form-floating my-3">
                   <input
                     type="text"
-                    name="name"
+                    name="description"
                     className="form-control"
-                    id="floatingName"
-                    placeholder="your name"
+                    id="floatingDescription"
+                    placeholder="Description"
                   />
-                  <label htmlFor="floatingName">Name</label>
+                  <label htmlFor="floatingName">Description</label>
                 </div>
 
                 <button
@@ -126,6 +186,7 @@ const AddToy = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
