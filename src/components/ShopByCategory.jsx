@@ -4,6 +4,7 @@ import "react-tabs/style/react-tabs.css";
 import "../css/shopByCategory.css";
 
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const ShopByCategory = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -45,9 +46,12 @@ const ShopByCategory = () => {
                       <h3 className="teko-font theme-color">{el.price}$</h3>
                       <p>rating: {el.rating}</p>
 
-                      <Link className="theme-button rounded text-center">
+                      <HashLink
+                        to={`/toy-details/${el._id}#top`}
+                        className="theme-button rounded text-center"
+                      >
                         View Details
-                      </Link>
+                      </HashLink>
                     </div>
                   )
                 );
@@ -66,9 +70,12 @@ const ShopByCategory = () => {
                       <h4 className="teko-font text-white pt-3">{el.name}</h4>
                       <h3 className="teko-font theme-color">{el.price}$</h3>
                       <p>rating: {el.rating}</p>
-                      <Link className="theme-button rounded text-center">
+                      <HashLink
+                        to={`/toy-details/${el._id}#top`}
+                        className="theme-button rounded text-center"
+                      >
                         View Details
-                      </Link>
+                      </HashLink>
                     </div>
                   )
                 );
@@ -87,9 +94,12 @@ const ShopByCategory = () => {
                       <h4 className="teko-font text-white pt-3">{el.name}</h4>
                       <h3 className="teko-font theme-color">{el.price}$</h3>
                       <p>rating: {el.rating}</p>
-                      <Link className="theme-button rounded text-center">
+                      <HashLink
+                        to={`/toy-details/${el._id}#top`}
+                        className="theme-button rounded text-center"
+                      >
                         View Details
-                      </Link>
+                      </HashLink>
                     </div>
                   )
                 );
