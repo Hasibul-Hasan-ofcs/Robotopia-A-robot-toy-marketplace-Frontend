@@ -27,17 +27,17 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const login = (email, password) => {
-    setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
-  };
-
   const updateUser = (displayName, photoURL) => {
     setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: displayName,
       photoURL: photoURL,
     });
+  };
+
+  const login = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const googlePopUpSignIn = () => {
@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
-  const authinfo = {
+  const authObject = {
     user,
     loading,
     setLoading,
@@ -70,7 +70,7 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={authinfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authObject}>{children}</AuthContext.Provider>
   );
 };
 

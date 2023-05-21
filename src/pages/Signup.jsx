@@ -7,16 +7,17 @@ import dynamicAppTitle from "../js/dynamicAppTitle";
 import { Spinner } from "react-bootstrap";
 
 const Signup = () => {
-  const { createUser, updateUser, theme, loading, setLoading } =
+  dynamicAppTitle("Signup");
+
+  const navigate = useNavigate();
+
+  const { createUser, updateUser, loading, setLoading } =
     useContext(AuthContext);
+
   const [upProfile, setUpProfile] = useState(false);
   const [nameState, setNameState] = useState("");
   const [photoState, setPhotoState] = useState("");
   const [errorState, setErrorState] = useState(null);
-
-  const navigate = useNavigate();
-
-  dynamicAppTitle("Signup");
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -65,11 +66,7 @@ const Signup = () => {
   }, [nameState]);
 
   return (
-    <div
-      className={`container-fluid py-5 ${
-        theme ? "bg-dark-secondary" : "bg_cream_orange_01"
-      }`}
-    >
+    <div className="py-5">
       <div className="container mx-auto d-flex flex-column flex-lg-row gap-3 gap-lg-0">
         <div className="w-100 w-lg-50 mx-auto">
           <img className="img-fluid" src={Robo3} />

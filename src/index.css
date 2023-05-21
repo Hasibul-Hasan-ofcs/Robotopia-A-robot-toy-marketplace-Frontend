@@ -162,6 +162,18 @@ a {
   width: 60%;
 }
 
+.height-50 {
+  height: 50px;
+}
+
+.scale-1p2 {
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.scale-1p2:hover {
+  transform: scale(1.2);
+}
+
 .height-520 {
   height: 520px;
 }

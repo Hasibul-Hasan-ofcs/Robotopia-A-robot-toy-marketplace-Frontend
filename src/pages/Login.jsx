@@ -1,23 +1,22 @@
 import React, { useContext, useState } from "react";
-import "./../css/form.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGithub, FaGoogle } from "react-icons/fa";
-import { HiOutlineInformationCircle } from "react-icons/hi";
 import { AuthContext } from "../providers/AuthProvider";
-import Robo3 from "../assets/images/robo_3.png";
+import Google from "../assets/images/google.png";
 import dynamicAppTitle from "../js/dynamicAppTitle";
 import { Spinner } from "react-bootstrap";
+import "../css/glassmorphism.css";
 
 const Login = () => {
   dynamicAppTitle("Login");
-  const [errorState, setErrorState] = useState(null);
-  const { login, googlePopUpSignIn, githubPopUpSignIn, theme, loading } =
-    useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location);
+  const [errorState, setErrorState] = useState(null);
+  const { login, googlePopUpSignIn, setLoading, loading } =
+    useContext(AuthContext);
+
+  // console.log(location);
 
   const from = location.state?.from?.pathname || "/";
 
@@ -28,44 +27,38 @@ const Login = () => {
     const password = form.password.value;
 
     login(email, password)
-      .then((userCredential) => {
-        const userTemp = userCredential.user;
+      .then((credential) => {
         navigate(from, { replace: true });
       })
-      .catch((err) => setErrorState(err.message));
+      .catch((err) => {
+        setErrorState(err.message);
+        setLoading(false);
+      });
 
     form.reset();
   };
 
   const handleGooglePopUpLogin = () => {
     googlePopUpSignIn()
-      .then((result) => {
-        const userTemp = result.user;
+      .then((credential) => {
         navigate(from, { replace: true });
       })
-      .catch((err) => console.error(err.message));
+      .catch((err) => {
+        console.log(err.message);
+        setLoading(false);
+      });
   };
 
   return (
-    <div
-      className={`container-fluid py-5 ${
-        theme ? "bg-dark-secondary" : "bg_cream_orange_01"
-      }`}
-    >
-      <div className="container mx-auto d-flex flex-column flex-lg-row gap-3 gap-lg-0">
-        <div className="w-100 w-lg-50 mx-auto">
-          <img className="img-fluid" src={Robo3} />
-        </div>
+    <div className="py-5">
+      <div className="container mx-auto d-flex align-items-center justify-content-center">
         <div className="form w-100 w-lg-50 p-1 p-lg-4 mx-auto">
           <div className="bg_cream_orange_01 rounded-2 shadow p-5 d-flex flex-column gap-3 flex-grow-1 border">
             {errorState && (
               <h5 className="text-danger fw-bold text-center">{errorState}</h5>
             )}
-            <h3 className="pb-3 text-center">Hey there!</h3>
-            <p className="text-center">
-              Welcome back. Please use your credentials to get started with
-              Robotopia
-            </p>
+            <h3 className="teko-font pb-3">LOGIN</h3>
+
             <form onSubmit={formSubmitHandler}>
               <div className="form-floating mb-3">
                 <input
@@ -92,38 +85,37 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="theme-button rounded border-0 px-3 py-2 fw-bold w-100 my-3"
+                className="theme-button w-100 my-4 rounded border-0 px-3 py-2 fw-bold"
               >
                 {loading ? (
                   <Spinner animation="border" variant="light" size="sm" />
                 ) : (
-                  <span>Sign In</span>
+                  <h2 className="teko-font">Sign In</h2>
                 )}
               </button>
 
               <div className="py-2">
-                <p className="text-center">
+                <h3 className="text-center teko-font">
                   Don't have an account? &nbsp;
                   <Link
                     to="/signup"
-                    className="fw-bold text-decoration-none theme-color"
+                    className="text-decoration-none fw-bold theme-color"
                   >
                     Sign Up
                   </Link>
-                </p>
+                </h3>
 
-                <p className="text-center border-bottom py-3">
-                  Also sign in using
-                </p>
+                <h3 className="text-center teko-font py-2">or</h3>
               </div>
             </form>
-            <div className="">
+            <div className=" d-flex align-items-center justify-content-center">
               <button
                 type="submit"
-                className="google_login_button rounded py-1 px-3 fw-medium w-100"
+                className="glass-box scale-1p2 rounded py-1 px-3 fw-medium rounded-5"
                 onClick={handleGooglePopUpLogin}
               >
-                <FaGoogle></FaGoogle> &nbsp; Google
+                <img src={Google} className="height-50" /> &nbsp;&nbsp; Google
+                Sign In
               </button>
             </div>
           </div>

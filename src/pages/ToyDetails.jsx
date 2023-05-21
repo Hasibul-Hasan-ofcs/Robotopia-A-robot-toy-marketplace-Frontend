@@ -18,8 +18,11 @@ const ToyDetails = () => {
         {loadedData && (
           <div className="details-box rounded-4 border p-3 mb-4">
             <div className="glass-box-toy-details d-flex align-items-center justify-content-center flex-column py-5">
-              <img src={loadedData.img} className="h-250 rounded shp-img" />
-              <h4 className="teko-font text-white pt-3">{loadedData.name}</h4>
+              <h1 className="teko-font my-3">{loadedData.name}</h1>
+              <img
+                src={loadedData.img}
+                className="h-250 rounded shp-img my-3"
+              />
               <h3 className="teko-font">Seller: {loadedData.sellerName}</h3>
               <h3 className="teko-font">rating: {loadedData.sellerEmail}</h3>
               <h1 className="teko-font theme-color">{loadedData.price}$</h1>
