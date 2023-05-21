@@ -25,8 +25,6 @@ const NavigationBar = () => {
     setClassStateDD(
       `dropdown shadow bg-white rounded overflow-hidden d-flex flex-column ${displayValue}`
     );
-
-    console.log(displayValue);
   };
 
   useEffect(() => {
@@ -78,18 +76,24 @@ const NavigationBar = () => {
                 >
                   All Toys
                 </ActiveLink>
-                <ActiveLink
-                  to="/my-toys"
-                  classes={`fs-14 text-decoration-none text-white`}
-                >
-                  My Toys
-                </ActiveLink>
-                <ActiveLink
-                  to="/add-toy"
-                  classes={`fs-14 text-decoration-none text-white`}
-                >
-                  Add A Toy
-                </ActiveLink>
+
+                {user && (
+                  <ActiveLink
+                    to="/my-toys"
+                    classes={`fs-14 text-decoration-none text-white`}
+                  >
+                    My Toys
+                  </ActiveLink>
+                )}
+                {user && (
+                  <ActiveLink
+                    to="/add-toy"
+                    classes={`fs-14 text-decoration-none text-white`}
+                  >
+                    Add A Toy
+                  </ActiveLink>
+                )}
+
                 <ActiveLink
                   to="/blogs"
                   classes={`fs-14 text-decoration-none text-white`}

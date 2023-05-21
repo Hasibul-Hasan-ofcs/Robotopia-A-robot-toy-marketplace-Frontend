@@ -1,7 +1,9 @@
 import React from "react";
 import BannerCommon from "../components/BannerCommon";
+import dynamicAppTitle from "../js/dynamicAppTitle";
 
 const AboutUs = () => {
+  dynamicAppTitle("About Us");
   return (
     <div>
       <BannerCommon pageName="About Us"></BannerCommon>
