@@ -15,6 +15,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import ToyDetails from "./pages/ToyDetails.jsx";
+import { toyDetailsData } from "./js/jsonLoader.js";
 
 // backend server
 // https://robotopia-server.vercel.app
@@ -51,6 +52,7 @@ const router = createBrowserRouter([
             <ToyDetails></ToyDetails>
           </PrivateRoute>
         ),
+        loader: toyDetailsData,
       },
       {
         path: "/about-us",
