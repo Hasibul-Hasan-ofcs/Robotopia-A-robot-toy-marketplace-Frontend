@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./../css/form.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { HiOutlineInformationCircle } from "react-icons/hi";
 import { AuthContext } from "../providers/AuthProvider";
@@ -9,12 +9,17 @@ import dynamicAppTitle from "../js/dynamicAppTitle";
 import { Spinner } from "react-bootstrap";
 
 const Login = () => {
+  dynamicAppTitle("Login");
   const [errorState, setErrorState] = useState(null);
   const { login, googlePopUpSignIn, githubPopUpSignIn, theme, loading } =
     useContext(AuthContext);
 
   const navigate = useNavigate();
-  dynamicAppTitle("Login");
+  const location = useLocation();
+
+  console.log(location);
+
+  const from = location.state?.from?.pathname || "/";
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -25,8 +30,7 @@ const Login = () => {
     login(email, password)
       .then((userCredential) => {
         const userTemp = userCredential.user;
-        // console.log(userTemp);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => setErrorState(err.message));
 
@@ -37,8 +41,7 @@ const Login = () => {
     googlePopUpSignIn()
       .then((result) => {
         const userTemp = result.user;
-        // console.log(userTemp);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => console.error(err.message));
   };

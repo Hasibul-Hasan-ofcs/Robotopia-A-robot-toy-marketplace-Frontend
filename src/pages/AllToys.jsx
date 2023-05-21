@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import BannerCommon from "../components/BannerCommon";
+import { HashLink } from "react-router-hash-link";
+import dynamicAppTitle from "../js/dynamicAppTitle";
 
 const AllToys = () => {
+  dynamicAppTitle("All Toys");
   const [allToys, setAllToys] = useState(null);
   const [tempFilter, setTempFilter] = useState(null);
 
@@ -76,9 +79,11 @@ const AllToys = () => {
                     <td>{el.price}$</td>
                     <td>{el.availableQuantity}</td>
                     <td>
-                      <button className="theme-button px-3 rounded border-0">
-                        View Details
-                      </button>
+                      <HashLink to={`/toy-details/${el._id}#top`}>
+                        <button className="theme-button px-3 rounded border-0">
+                          View Details
+                        </button>
+                      </HashLink>
                     </td>
                   </tr>
                 ))}
