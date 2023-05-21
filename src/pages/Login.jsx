@@ -53,7 +53,7 @@ const Login = () => {
     <div className="py-5">
       <div className="container mx-auto d-flex align-items-center justify-content-center">
         <div className="form w-100 w-lg-50 p-1 p-lg-4 mx-auto">
-          <div className="bg_cream_orange_01 rounded-2 shadow p-5 d-flex flex-column gap-3 flex-grow-1 border">
+          <div className="rounded-2 shadow p-5 d-flex flex-column gap-3 flex-grow-1 border">
             {errorState && (
               <h5 className="text-danger fw-bold text-center">{errorState}</h5>
             )}

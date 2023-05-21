@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { HiOutlineInformationCircle } from "react-icons/hi";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import Robo3 from "../assets/images/robo_3.png";
 import dynamicAppTitle from "../js/dynamicAppTitle";
 import { Spinner } from "react-bootstrap";
 
@@ -39,14 +37,12 @@ const Signup = () => {
       return setErrorState("Password should be atleast 6 characters long");
     }
 
-    console.log(form, name, email, password, photo);
     createUser(email, password)
-      .then((userCredential) => {
+      .then((credential) => {
         setNameState(name);
         setPhotoState(photo);
-        console.log(userCredential);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => setLoading(false));
 
     form.reset();
   };
@@ -56,31 +52,24 @@ const Signup = () => {
       setUpProfile(!upProfile);
     } else {
       updateUser(nameState, photoState)
-        .then((userCredential) => {
-          console.log(userCredential);
+        .then((credential) => {
           setLoading(false);
           navigate("/#top");
         })
-        .catch((err) => console.error(err));
+        .catch((err) => setLoading(false));
     }
   }, [nameState]);
 
   return (
     <div className="py-5">
-      <div className="container mx-auto d-flex flex-column flex-lg-row gap-3 gap-lg-0">
-        <div className="w-100 w-lg-50 mx-auto">
-          <img className="img-fluid" src={Robo3} />
-        </div>
+      <div className="container mx-auto d-flex align-items-center justify-content-center">
         <div className="form w-100 w-lg-50 p-1 p-lg-4 mx-auto">
-          <div className="bg_cream_orange_01 rounded-2 shadow p-5 d-flex flex-column gap-3 flex-grow-1 border">
+          <div className=" rounded-2 shadow p-5 d-flex flex-column gap-3 flex-grow-1 border">
             {errorState && (
               <h5 className="text-danger fw-bold text-center">{errorState}</h5>
             )}
-            <h3 className="pb-3 text-center">Hey there!</h3>
-            <p className="text-center">
-              Please provide your credentials to get started with one of the
-              largest chef community.
-            </p>
+            <h3 className="pt-2 teko-font">Sign Up</h3>
+
             <form onSubmit={formSubmitHandler}>
               <div className="form-floating mb-3">
                 <input
@@ -122,19 +111,6 @@ const Signup = () => {
                 />
                 <label htmlFor="floatingPhoto">Photo URL</label>
               </div>
-              <div className="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label className="form-check-label" htmlFor="exampleCheck1">
-                  By accepting this I agree to the{" "}
-                  <button className="fw-bold text-decoration-none theme-color d-inline">
-                    Terms and Conditions
-                  </button>
-                </label>
-              </div>
 
               <button
                 type="submit"
@@ -143,12 +119,12 @@ const Signup = () => {
                 {loading ? (
                   <Spinner animation="border" variant="light" size="sm" />
                 ) : (
-                  <span>Sign Up</span>
+                  <h2 className="teko-font">Sign Up</h2>
                 )}
               </button>
 
               <div className="py-2">
-                <p className="text-center">
+                <h3 className="text-center teko-font">
                   Already have an account? &nbsp;
                   <Link
                     to="/login"
@@ -156,7 +132,7 @@ const Signup = () => {
                   >
                     Sign In
                   </Link>
-                </p>
+                </h3>
               </div>
             </form>
           </div>
