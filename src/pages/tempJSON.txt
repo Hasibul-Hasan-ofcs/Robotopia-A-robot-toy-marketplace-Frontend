@@ -1,0 +1,134 @@
+[
+  {
+    "class_name": "Introduction to English Communication Skills",
+    "class_image": "https://i.ibb.co/6wyx58h/english01.jpg",
+    "instructor_name": "John Smith",
+    "instructor_email": "john.smith@example.com",
+    "available_seats": 20,
+    "price": 50,
+    "status": "approved",
+    "class_topics": [
+      "Introduction to hiragana",
+      "Basic Japanese vocabulary",
+      "Greetings and self-introduction",
+      "Japanese sentence structure",
+      "Conversational phrases",
+      "Counting and numbers",
+      "Time and dates",
+      "Asking for directions",
+      "Ordering food and drinks",
+      "Cultural aspects of Japan"
+    ],
+    "rating": 4.5
+  },
+  {
+    "class_name": "Learn Japanese Language in an Efficient Way",
+    "class_image": "https://i.ibb.co/Z2MyTfV/japanese.jpg",
+    "instructor_name": "Yumi Tanaka",
+    "instructor_email": "yumi.tanaka@example.com",
+    "available_seats": 15,
+    "price": 60,
+    "status": "approved",
+    "class_topics": [
+      "Pronunciation and accent",
+      "Common English phrases",
+      "Grammar essentials",
+      "Listening comprehension",
+      "Speaking and fluency",
+      "Vocabulary building",
+      "Telephone and email etiquette",
+      "Socializing and small talk",
+      "Business communication",
+      "Cultural aspects of English-speaking countries"
+    ],
+    "rating": 4.8
+  },
+  {
+    "class_name": "Spanish for Everyday Conversations",
+    "class_image": "https://i.ibb.co/1zdHT0w/spanish.jpg",
+    "instructor_name": "Maria Garcia",
+    "instructor_email": "maria.garcia@example.com",
+    "available_seats": 10,
+    "price": 45,
+    "status": "approved",
+    "class_topics": [
+      "Greetings and introductions",
+      "Basic vocabulary and expressions",
+      "Asking and giving directions",
+      "Ordering food and drinks",
+      "Shopping and bargaining",
+      "Family and relationships",
+      "Travel and accommodation",
+      "Daily routines",
+      "Spanish-speaking countries and cultures",
+      "Common idioms and slang"
+    ],
+    "rating": 4.2
+  },
+  {
+    "class_name": "Mastering Arabic Grammar and Vocabulary",
+    "class_image": "https://i.ibb.co/Bc6x1LG/arabic.jpg",
+    "instructor_name": "Ahmed Khalid",
+    "instructor_email": "ahmed.khalid@example.com",
+    "available_seats": 18,
+    "price": 55,
+    "status": "approved",
+    "class_topics": [
+      "Arabic alphabet and pronunciation",
+      "Grammar rules and sentence structure",
+      "Basic vocabulary and phrases",
+      "Numbers and counting",
+      "Formal and informal speech",
+      "Reading and writing in Arabic",
+      "Verb conjugation",
+      "Arabic literature and poetry",
+      "Arab culture and traditions",
+      "Common expressions and idioms"
+    ],
+    "rating": 4.6
+  },
+  {
+    "class_name": "Unlocking the Secrets of Chinese Characters",
+    "class_image": "https://i.ibb.co/VWCHw5T/chinese.jpg",
+    "instructor_name": "Li Wei",
+    "instructor_email": "li.wei@example.com",
+    "available_seats": 12,
+    "price": 50,
+    "status": "approved",
+    "class_topics": [
+      "Introduction to Chinese characters",
+      "Basic strokes and radicals",
+      "Pinyin and pronunciation",
+      "Common phrases and greetings",
+      "Numbers and counting",
+      "Daily expressions",
+      "Chinese culture and traditions",
+      "Reading and writing Chinese",
+      "Conversation practice",
+      "Chinese calligraphy"
+    ],
+    "rating": 4.4
+  },
+  {
+    "class_name": "Advanced English Writing and Composition",
+    "class_image": "https://i.ibb.co/XkyzfM5/english02.jpg",
+    "instructor_name": "Emily Johnson",
+    "instructor_email": "emily.johnson@example.com",
+    "available_seats": 25,
+    "price": 55,
+    "status": "approved",
+    "class_topics": [
+      "Essay writing techniques",
+      "Advanced grammar and syntax",
+      "Developing a thesis statement",
+      "Critical thinking and analysis",
+      "Research skills",
+      "Writing for different purposes (academic, professional, etc.)",
+      "Editing and proofreading",
+      "Building vocabulary and style",
+      "Writing persuasively",
+      "Literary analysis"
+    ],
+    "rating": 4.9
+  }
+]
