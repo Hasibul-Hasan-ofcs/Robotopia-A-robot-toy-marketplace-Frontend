@@ -25,6 +25,7 @@ const AllToys = () => {
     fetch("https://robotopia-server.vercel.app/alltoys")
       .then((result) => result.json())
       .then((data) => {
+        console.log(data);
         setAllToys(data);
         setTempFilter(data);
       })
@@ -61,6 +62,7 @@ const AllToys = () => {
           <table className="table">
             <thead>
               <tr>
+                <th>Toy View</th>
                 <th>Seller Name</th>
                 <th>Toy Name</th>
                 <th>Sub-Category</th>
@@ -73,6 +75,9 @@ const AllToys = () => {
               {allToys &&
                 tempFilter.map((el, indx) => (
                   <tr key={indx} className="rounded">
+                    <td>
+                      <img src={el.img} className="img-40px" />
+                    </td>
                     <td>{el.sellerName}</td>
                     <td>{el.name}</td>
                     <td>{el.subCategory}</td>

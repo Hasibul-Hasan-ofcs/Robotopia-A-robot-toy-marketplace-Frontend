@@ -188,6 +188,10 @@ a {
   height: auto;
 }
 
+.red-bg {
+  background: rgb(209, 69, 69);
+}
+
 .banner-common {
   /* background: linear-gradient(to top left, #237bff, #4e95ff); */
   background: radial-gradient(#237bff 15%, transparent 16%) 0 0,

@@ -2,15 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import dynamicAppTitle from "../js/dynamicAppTitle";
 import BannerCommon from "../components/BannerCommon";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   dynamicAppTitle("My Toys");
 
   const [myToys, setMyToys] = useState(null);
   const [emailState, setEmailState] = useState(null);
+  const [deleteState, setDeleteState] = useState(null);
 
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
+  // setEmailState(user?.email);
 
   useEffect(() => {
     fetch(
@@ -22,7 +25,41 @@ const MyToys = () => {
         console.log(data);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [user, deleteState]);
+
+  const deleteToyHandler = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // fetch(`https://robotopia-server.vercel.app/mytoys?id=${id}`
+        fetch(
+          `http://localhost:5000/mytoys?id=${id}`,
+
+          {
+            method: "DELETE",
+          }
+        )
+          .then((result) => result.json())
+          .then((data) => {
+            setDeleteState(data);
+            console.log(data);
+            Swal.fire(
+              "Deleted!",
+              `Your product with id ${id} is successfully deleted`,
+              "success"
+            );
+          })
+          .catch((err) => console.error(err));
+      }
+    });
+  };
 
   return (
     <div>
@@ -54,7 +91,7 @@ const MyToys = () => {
           <table className="table">
             <thead>
               <tr>
-                <th>Seller Name</th>
+                <th>Toy view</th>
                 <th>Toy Name</th>
                 <th>Sub-Category</th>
                 <th>Price</th>
@@ -62,26 +99,31 @@ const MyToys = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            {/* <tbody>
-              {allToys &&
-                tempFilter.map((el, indx) => (
+            <tbody>
+              {myToys &&
+                myToys.map((el, indx) => (
                   <tr key={indx} className="rounded">
-                    <td>{el.sellerName}</td>
+                    <td>
+                      <img src={el.img} className="img-40px" />
+                    </td>
                     <td>{el.name}</td>
                     <td>{el.subCategory}</td>
                     <td>{el.price}$</td>
                     <td>{el.availableQuantity}</td>
                     <td>
-                      <button className="theme-button px-3 rounded border-0">
+                      <button className="theme-button px-3 rounded border-0 me-3">
                         Update
                       </button>
-                      <button className="theme-button bg-danger px-3 rounded border-0">
+                      <button
+                        className="theme-button red-bg px-3 rounded border-0"
+                        onClick={() => deleteToyHandler(el._id)}
+                      >
                         Delete
                       </button>
                     </td>
                   </tr>
                 ))}
-            </tbody> */}
+            </tbody>
           </table>
         </div>
       </div>

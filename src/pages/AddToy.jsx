@@ -85,6 +85,7 @@ const AddToy = () => {
                     className="form-control"
                     id="floatingImg"
                     placeholder="Picture URL"
+                    required
                   />
                   <label htmlFor="floatingImg">Picture URL</label>
                 </div>
@@ -95,6 +96,7 @@ const AddToy = () => {
                     className="form-control"
                     id="floatingName"
                     placeholder="Toy Name"
+                    required
                   />
                   <label htmlFor="floatingName">Toy Name</label>
                 </div>
@@ -106,6 +108,7 @@ const AddToy = () => {
                     id="floatingSellerName"
                     placeholder={user.displayName}
                     disabled
+                    required
                   />
                   <label htmlFor="floatingSellerName">{user.displayName}</label>
                 </div>
@@ -117,6 +120,7 @@ const AddToy = () => {
                     id="floatingSellerEmail"
                     placeholder={user.email}
                     disabled
+                    required
                   />
                   <label htmlFor="floatingSellerEmail">{user.email}</label>
                 </div>
@@ -127,6 +131,7 @@ const AddToy = () => {
                     className="form-control"
                     id="floatingSubCategory"
                     placeholder="Sub-category"
+                    required
                   />
                   <label htmlFor="floatingSubCategory">Sub-category</label>
                 </div>
@@ -137,18 +142,9 @@ const AddToy = () => {
                     className="form-control"
                     id="floatingPrice"
                     placeholder="Price"
+                    required
                   />
                   <label htmlFor="floatingPrice">Price</label>
-                </div>
-                <div className="form-floating my-3">
-                  <input
-                    type="text"
-                    name="rating"
-                    className="form-control"
-                    id="floatingRating"
-                    placeholder="Rating"
-                  />
-                  <label htmlFor="floatingRating">Rating</label>
                 </div>
                 <div className="form-floating my-3">
                   <input
@@ -157,6 +153,7 @@ const AddToy = () => {
                     className="form-control"
                     id="floatingQuantity"
                     placeholder="Available quantity"
+                    required
                   />
                   <label htmlFor="floatingQuantity">Available quantity</label>
                 </div>
@@ -167,6 +164,7 @@ const AddToy = () => {
                     className="form-control"
                     id="floatingDescription"
                     placeholder="Description"
+                    required
                   />
                   <label htmlFor="floatingName">Description</label>
                 </div>
