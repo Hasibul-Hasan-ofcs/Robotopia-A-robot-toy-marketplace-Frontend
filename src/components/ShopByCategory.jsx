@@ -53,6 +53,17 @@ const ShopByCategory = () => {
               modules={[Pagination]}
               className="mySwiper"
               style={{ paddingBottom: "40px" }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
             >
               <div className="rounded d-flex flex-wrap gap-4 justify-content-center">
                 {subCategoryData &&
@@ -97,6 +108,17 @@ const ShopByCategory = () => {
               modules={[Pagination]}
               className="mySwiper"
               style={{ paddingBottom: "40px" }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
             >
               <div className="rounded d-flex flex-wrap gap-4 justify-content-center">
                 {subCategoryData &&
@@ -140,6 +162,17 @@ const ShopByCategory = () => {
               modules={[Pagination]}
               className="mySwiper"
               style={{ paddingBottom: "40px" }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
             >
               <div className="rounded d-flex flex-wrap gap-4 justify-content-center">
                 {subCategoryData &&

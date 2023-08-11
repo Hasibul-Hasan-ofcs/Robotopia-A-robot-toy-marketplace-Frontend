@@ -67,7 +67,7 @@ const News = () => {
             <span className="theme-color">View Trailer</span>
           </div>
         </div>
-        <div className="w-full d-flex align-items-center justify-content-center p-1">
+        <div className="newsimgbox w-full d-flex align-items-center justify-content-center m-1">
           <img src={TLN} alt="transformer image" className="rounded-3 w-100" />
         </div>
 

@@ -17,3 +17,16 @@
 .gs-button2:hover {
   transform: scale(1.2);
 }
+
+.newsimgbox {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.newsimgbox > img {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.newsimgbox:hover > img {
+  transform: scale(1.1);
+}
