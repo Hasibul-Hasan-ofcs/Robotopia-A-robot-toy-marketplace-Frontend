@@ -11,12 +11,12 @@ const Home = () => {
   dynamicAppTitle("Home");
 
   return (
-    <div>
+    <div className="">
       <Header></Header>
       {/* <Sponsors></Sponsors> */}
       <Gallery></Gallery>
-      <News></News>
       <ActionFigureContext></ActionFigureContext>
+      <News></News>
       <ShopByCategory></ShopByCategory>
       <NewsLetter></NewsLetter>
     </div>

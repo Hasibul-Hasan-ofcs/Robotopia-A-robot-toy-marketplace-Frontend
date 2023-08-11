@@ -23,3 +23,85 @@
 .gl-img {
   aspect-ratio: 1/1;
 }
+
+.img-container-grid {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 700px;
+}
+
+.left-grid {
+  max-width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  flex: 0 0 60%;
+}
+
+.smallsquare {
+  max-width: 33.333%;
+  height: auto;
+  flex: 0 0 33.333%;
+  padding-top: 20%;
+  display: grid;
+  position: relative;
+}
+
+.h_rectangle {
+  max-width: 40%;
+  flex: 0 0 40%;
+  padding-top: 20%;
+  position: relative;
+}
+
+.bigsquare {
+  min-width: 100%;
+  height: auto;
+  flex: 0 0 40%;
+  padding-top: 40%;
+  display: grid;
+  position: relative;
+}
+
+.bigsquare_blank {
+  max-width: 40%;
+  height: auto;
+  flex: 0 0 40%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inner_square {
+  max-width: 50%;
+  flex: 0 0 50%;
+  height: 50%;
+  position: relative;
+}
+
+.v_vertical {
+  max-width: 40%;
+  flex: 0 0 40%;
+  padding-top: 40%;
+  position: relative;
+}
+
+.image-grid-controller {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  padding: 2.5px;
+
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.image-grid-controller:hover {
+  transform: scale(1.1);
+}
+
+.img-wrapper-box {
+  overflow: hidden;
+}

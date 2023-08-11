@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../css/shopByCategory.css";
-
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+// import required modules
+import { Pagination } from "swiper/modules";
 
 const ShopByCategory = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -22,88 +27,151 @@ const ShopByCategory = () => {
   return (
     <div className="py-5" id="gallery">
       <div className="container mx-auto">
-        <h2 className="orbitron-font py-5 fw-bold text-center">
-          Shop By <span className="theme-color">Category</span>
+        <h2 className="teko-font py-5 fw-bold text-center">
+          View Toy <span className="theme-color">Category</span>
         </h2>
 
         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList>
-            <Tab>Gundam </Tab>
-            <Tab>Transformers </Tab>
-            <Tab>Macross </Tab>
+            <Tab>
+              <span className="theme-color">Gundam</span>{" "}
+            </Tab>
+            <Tab>
+              <span className="theme-color">Transformers</span>{" "}
+            </Tab>
+            <Tab>
+              <span className="theme-color">Macross</span>{" "}
+            </Tab>
           </TabList>
-          <TabPanel className="dark_bg01 rounded d-flex flex-wrap gap-4 justify-content-center">
-            {subCategoryData &&
-              subCategoryData.map((el, indx) => {
-                return (
-                  el.type === "g" && (
-                    <div
-                      className="card m-4 p-3 d-flex gap-2 flex-column"
-                      key={indx}
-                    >
-                      <img src={el.img} className="h-250 rounded shp-img" />
-                      <h4 className="teko-font text-white pt-3">{el.name}</h4>
-                      <h3 className="teko-font theme-color">{el.price}$</h3>
-                      <p>rating: {el.rating}</p>
+          <TabPanel>
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper"
+              style={{ paddingBottom: "40px" }}
+            >
+              <div className="rounded d-flex flex-wrap gap-4 justify-content-center">
+                {subCategoryData &&
+                  subCategoryData.map((el, indx) => {
+                    return (
+                      el.type === "g" && (
+                        <SwiperSlide key={indx}>
+                          <div className="card m-4 p-3 d-flex gap-2 flex-column">
+                            <img
+                              src={el.img}
+                              className="h-250 rounded shp-img"
+                            />
+                            <h4 className="teko-font pt-3 text-black">
+                              {el.name}
+                            </h4>
+                            <h3 className="teko-font theme-color">
+                              {el.price}$
+                            </h3>
+                            <p>rating: {el.rating}</p>
 
-                      <HashLink
-                        to={`/toy-details/${el._id}#top`}
-                        className="theme-button rounded text-center"
-                      >
-                        View Details
-                      </HashLink>
-                    </div>
-                  )
-                );
-              })}
+                            <HashLink
+                              to={`/toy-details/${el._id}#top`}
+                              className="theme-button rounded text-center py-2"
+                            >
+                              View Details
+                            </HashLink>
+                          </div>
+                        </SwiperSlide>
+                      )
+                    );
+                  })}
+              </div>
+            </Swiper>
           </TabPanel>
-          <TabPanel className="dark_bg01 rounded d-flex flex-wrap gap-4 justify-content-center">
-            {subCategoryData &&
-              subCategoryData.map((el, indx) => {
-                return (
-                  el.type === "t" && (
-                    <div
-                      className="card m-4 p-3 d-flex gap-2 flex-column"
-                      key={indx}
-                    >
-                      <img src={el.img} className="h-250 rounded shp-img" />
-                      <h4 className="teko-font text-white pt-3">{el.name}</h4>
-                      <h3 className="teko-font theme-color">{el.price}$</h3>
-                      <p>rating: {el.rating}</p>
-                      <HashLink
-                        to={`/toy-details/${el._id}#top`}
-                        className="theme-button rounded text-center"
-                      >
-                        View Details
-                      </HashLink>
-                    </div>
-                  )
-                );
-              })}
+          <TabPanel>
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper"
+              style={{ paddingBottom: "40px" }}
+            >
+              <div className="rounded d-flex flex-wrap gap-4 justify-content-center">
+                {subCategoryData &&
+                  subCategoryData.map((el, indx) => {
+                    return (
+                      el.type === "t" && (
+                        <SwiperSlide key={indx}>
+                          <div className="card m-4 p-3 d-flex gap-2 flex-column">
+                            <img
+                              src={el.img}
+                              className="h-250 rounded shp-img"
+                            />
+                            <h4 className="teko-font pt-3 text-black">
+                              {el.name}
+                            </h4>
+                            <h3 className="teko-font theme-color">
+                              {el.price}$
+                            </h3>
+                            <p>rating: {el.rating}</p>
+                            <HashLink
+                              to={`/toy-details/${el._id}#top`}
+                              className="theme-button rounded text-center py-2"
+                            >
+                              View Details
+                            </HashLink>
+                          </div>
+                        </SwiperSlide>
+                      )
+                    );
+                  })}
+              </div>
+            </Swiper>
           </TabPanel>
-          <TabPanel className="dark_bg01 rounded d-flex flex-wrap gap-4 justify-content-center">
-            {subCategoryData &&
-              subCategoryData.map((el, indx) => {
-                return (
-                  el.type === "m" && (
-                    <div
-                      className="card m-4 p-3 d-flex gap-2 flex-column"
-                      key={indx}
-                    >
-                      <img src={el.img} className="h-250 rounded shp-img" />
-                      <h4 className="teko-font text-white pt-3">{el.name}</h4>
-                      <h3 className="teko-font theme-color">{el.price}$</h3>
-                      <p>rating: {el.rating}</p>
-                      <HashLink
-                        to={`/toy-details/${el._id}#top`}
-                        className="theme-button rounded text-center"
-                      >
-                        View Details
-                      </HashLink>
-                    </div>
-                  )
-                );
-              })}
+          <TabPanel>
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper"
+              style={{ paddingBottom: "40px" }}
+            >
+              <div className="rounded d-flex flex-wrap gap-4 justify-content-center">
+                {subCategoryData &&
+                  subCategoryData.map((el, indx) => {
+                    return (
+                      el.type === "m" && (
+                        <SwiperSlide key={indx}>
+                          <div className="card m-4 p-3 d-flex gap-2 flex-column">
+                            <img
+                              src={el.img}
+                              className="h-250 rounded shp-img"
+                            />
+                            <h4 className="teko-font pt-3 text-black">
+                              {el.name}
+                            </h4>
+                            <h3 className="teko-font theme-color">
+                              {el.price}$
+                            </h3>
+                            <p>rating: {el.rating}</p>
+                            <HashLink
+                              to={`/toy-details/${el._id}#top`}
+                              className="theme-button rounded text-center py-2"
+                            >
+                              View Details
+                            </HashLink>
+                          </div>
+                        </SwiperSlide>
+                      )
+                    );
+                  })}
+              </div>
+            </Swiper>
           </TabPanel>
         </Tabs>
       </div>

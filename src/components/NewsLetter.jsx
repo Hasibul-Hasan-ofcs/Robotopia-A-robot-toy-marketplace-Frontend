@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../css/newsLetter.css";
 
 const NewsLetter = () => {
   const subscribeHandler = (e) => {
@@ -21,8 +22,8 @@ const NewsLetter = () => {
   };
 
   return (
-    <div className="container-fluid newsletter mx-0 px-0">
-      <div className="glass-bg px-0 d-flex flex-column justify-content-center align-items-center py-5">
+    <div className="container-fluid newsLetter mx-0 px-0">
+      <div className="px-0 d-flex flex-column justify-content-center align-items-center py-5">
         <h3
           className="text-white orbitron-font fw-bold px-4 py-3 my-2"
           style={{ fontSize: "30px" }}
@@ -38,6 +39,7 @@ const NewsLetter = () => {
               placeholder="Enter your email"
               aria-label="Enter your email"
               aria-describedby="basic-addon2"
+              required
             />
             <div className="input-group-append">
               <button

@@ -108,6 +108,10 @@ a {
   transform: skewX(-15deg) !important;
 }
 
+.theme-bg {
+  background: #237bff;
+}
+
 .white-mbg {
   background: linear-gradient(to top, #dbdbdb 0%, #fff 100%) !important;
 }
@@ -241,11 +245,15 @@ a {
 }
 
 .w-full {
-  width: 100%;
+  width: 50%;
 }
 
 @media (max-width: 760px) {
   .w-full {
-    width: 50%;
+    width: 100%;
   }
+}
+
+.text-justify {
+  text-align: justify;
 }
