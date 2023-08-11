@@ -1,0 +1,19 @@
+.newsDiv {
+  min-height: 500px;
+}
+
+.h-350px {
+  height: 350px;
+}
+
+.gs-button2 {
+  background: #fff;
+  height: 50px;
+  width: 50px;
+  border: 5px solid #237bff;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gs-button2:hover {
+  transform: scale(1.2);
+}

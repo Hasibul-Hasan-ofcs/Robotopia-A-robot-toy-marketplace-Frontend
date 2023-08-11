@@ -93,7 +93,7 @@ a {
 
 .active_route {
   color: #237bff !important;
-  transform: scale(1.3);
+  transform: scale(1.1);
   padding: 1px 4px;
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
@@ -215,4 +215,37 @@ a {
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
+}
+
+.grayscale-1 {
+  filter: grayscale(1);
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  cursor: pointer;
+}
+
+.grayscale-1:hover {
+  filter: grayscale(0);
+}
+
+.gap-5per {
+  gap: 13.5%;
+}
+
+.header-portion {
+  background-image: radial-gradient(circle at center, transparent 0%, #000 90%),
+    url("./assets/images/cybertron_1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.w-full {
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .w-full {
+    width: 50%;
+  }
 }

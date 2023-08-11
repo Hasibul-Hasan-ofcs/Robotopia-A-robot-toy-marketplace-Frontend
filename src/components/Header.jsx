@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../css/header.css";
 import "../css/glassmorphism.css";
 import Robo1 from "../assets/images/robo_1.jpg";
@@ -10,10 +10,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaPlay } from "react-icons/fa";
+import { AiOutlineCaretDown } from "react-icons/ai";
 import Marquee from "react-fast-marquee";
 
 const Header = () => {
   const settings = {
+    autoplay: true,
+    autoplaySpeed: 3000,
     dots: false,
     infinite: true,
     speed: 500,
@@ -42,7 +45,7 @@ const Header = () => {
   };
 
   return (
-    <div className="dark_bg01">
+    <div className="dark_bg01 header-portion">
       <div className="container mx-auto d-flex flex-column">
         <div className="carousal-div h-450 overflow-hidden">
           <Slider {...settings}>
@@ -70,19 +73,21 @@ const Header = () => {
             </span>
             <HashLink to="#gallery">
               <button className="gs-button rounded-circle d-flex align-items-center justify-content-center">
-                <FaPlay></FaPlay>
+                <AiOutlineCaretDown></AiOutlineCaretDown>
               </button>
             </HashLink>
           </div>
-          <Marquee style={{ overflowY: "hidden" }} className="mb-5">
+          <Marquee style={{ overflowY: "hidden" }} className="mb-5" speed={20}>
             <h1 className="teko-font text-white text-center">
-              Travel the utopia with <span className="theme-color">Gundam</span>{" "}
-              and <span className="theme-color">Transformers</span> toys. Step
-              into a world where imagination and technology collide, and get
-              ready to explore an extraordinary universe filled with robotic
-              wonders. From robot pets to intricate humanoid robots, our shelves
-              are stocked with a wide variety of robotic companions to suit
-              every taste and preference.
+              Travel the utopia with <span className="theme-color">Gundam</span>
+              {", "}
+              <span className="theme-color">Macross</span> and{" "}
+              <span className="theme-color">Transformers</span> toys. Step into
+              a world where imagination and technology collide, and get ready to
+              explore an extraordinary universe filled with robotic wonders.
+              From robot pets to intricate humanoid robots, our shelves are
+              stocked with a wide variety of robotic companions to suit every
+              taste and preference.
             </h1>
           </Marquee>
         </div>

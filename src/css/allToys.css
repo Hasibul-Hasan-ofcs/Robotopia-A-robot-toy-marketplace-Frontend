@@ -1,0 +1,12 @@
+.allToyBox {
+  clip-path: polygon(
+    10px 0,
+    100% 0,
+    100% 90px,
+    90px 100%,
+    0 100%,
+    0 60%,
+    0 10px
+  );
+  background: linear-gradient(to left, #000, #237bff);
+}

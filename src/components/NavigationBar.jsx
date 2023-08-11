@@ -36,7 +36,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <div className={`container-fluid mx-0 dark_bg01`} id="top">
+    <div className={`container-fluid mx-0 header-portion`} id="top">
       <nav className="container navbar navbar-expand-lg py-4">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
@@ -63,48 +63,45 @@ const NavigationBar = () => {
             id="navbarNavAltMarkup"
           >
             <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-end gap-lg-4 w-100">
-              <div className="links d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center gap-4 py-5 py-lg-0">
-                <ActiveLink
-                  to="/"
-                  classes={`fs-14 text-decoration-none text-white`}
-                >
+              <div className="fs-14 links d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center gap-4 py-5 py-lg-0">
+                <ActiveLink to="/" classes={` text-decoration-none text-white`}>
                   Home
                 </ActiveLink>
                 <ActiveLink
                   to="/all-toys"
-                  classes={`fs-14 text-decoration-none text-white`}
+                  classes={` text-decoration-none text-white`}
                 >
-                  All Toys
+                  Alltoys
                 </ActiveLink>
 
                 {user && (
                   <ActiveLink
                     to="/my-toys"
-                    classes={`fs-14 text-decoration-none text-white`}
+                    classes={` text-decoration-none text-white`}
                   >
-                    My Toys
+                    Mytoys
                   </ActiveLink>
                 )}
                 {user && (
                   <ActiveLink
                     to="/add-toy"
-                    classes={`fs-14 text-decoration-none text-white`}
+                    classes={` text-decoration-none text-white`}
                   >
-                    Add A Toy
+                    Addtoy
                   </ActiveLink>
                 )}
 
                 <ActiveLink
                   to="/blogs"
-                  classes={`fs-14 text-decoration-none text-white`}
+                  classes={` text-decoration-none text-white`}
                 >
                   Blogs
                 </ActiveLink>
                 <ActiveLink
                   to="/about-us"
-                  classes={`fs-14 text-decoration-none text-white`}
+                  classes={` text-decoration-none text-white`}
                 >
-                  About Us
+                  About
                 </ActiveLink>
               </div>
 
