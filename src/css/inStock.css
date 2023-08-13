@@ -1,0 +1,4 @@
+.instock-div {
+  max-height: 500px !important;
+  overflow-y: hidden !important;
+}

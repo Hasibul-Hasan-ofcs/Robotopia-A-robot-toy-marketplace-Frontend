@@ -18,8 +18,8 @@ const BoxReveal = ({ children, delayProp }) => {
     <div className="inline-block" ref={ref}>
       <motion.div
         variants={{
-          hidden: { opacity: 0.5, scale: 0 },
-          visible: { opacity: 1, scale: 1 },
+          hidden: { opacity: 0.5, y: "100%" },
+          visible: { opacity: 1, y: "0%" },
         }}
         initial="hidden"
         animate={animeControl}

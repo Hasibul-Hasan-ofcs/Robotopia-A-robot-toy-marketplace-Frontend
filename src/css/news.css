@@ -1,5 +1,6 @@
 .newsDiv {
   min-height: 500px;
+  background: #313646;
 }
 
 .h-350px {
@@ -18,9 +19,21 @@
   transform: scale(1.2);
 }
 
+.leftnewsbox {
+  width: 50%;
+}
+
 .newsimgbox {
+  width: 50%;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .leftnewsbox,
+  .newsimgbox {
+    width: 100%;
+  }
 }
 
 .newsimgbox > img {

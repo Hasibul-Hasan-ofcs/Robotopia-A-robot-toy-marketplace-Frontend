@@ -1,0 +1,79 @@
+.ibx_box {
+  height: 60px;
+  align-items: end;
+}
+
+.ibx_bar {
+  box-shadow: 0px 0px 50px #1041ff;
+}
+
+.ibx_one {
+  height: 70px;
+  width: 20px;
+  border-radius: 100px;
+  background: #237bff;
+  animation: ibx_anim1 1.5s linear 3;
+}
+
+.ibx_two {
+  height: 50px;
+  width: 20px;
+  border-radius: 100px;
+  background: #237bff;
+  animation: ibx_anim2 1.25s linear 3;
+}
+
+.ibx_three {
+  height: 30px;
+  width: 20px;
+  border-radius: 100px;
+  background: #237bff;
+  animation: ibx_anim3 1s linear 3;
+}
+
+@keyframes ibx_anim1 {
+  50% {
+    height: 20px;
+  }
+  0%,
+  100% {
+    height: 70px;
+  }
+}
+
+@keyframes ibx_anim2 {
+  50% {
+    height: 20px;
+  }
+  0%,
+  100% {
+    height: 50px;
+  }
+}
+
+@keyframes ibx_anim3 {
+  50% {
+    height: 20px;
+  }
+  0%,
+  100% {
+    height: 30px;
+  }
+}
+
+.ibx_title {
+  display: flex;
+  gap: 5px;
+  animation: ibx_title_anim 3s cubic-bezier(0.215, 0.61, 0.355, 1) 4.5s 1
+    forwards;
+  overflow-y: hidden;
+}
+
+@keyframes ibx_title_anim {
+  from {
+    gap: 5px;
+  }
+  to {
+    gap: 100px;
+  }
+}

@@ -27,20 +27,20 @@ const ShopByCategory = () => {
   return (
     <div className="py-5" id="gallery">
       <div className="container mx-auto">
-        <h2 className="teko-font py-5 fw-bold text-center">
-          View Toy <span className="theme-color">Category</span>
+        <h2 className="bebas-font py-5 fw-bold text-center text-white">
+          View Toy Category
         </h2>
 
         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList>
-            <Tab>
-              <span className="theme-color">Gundam</span>{" "}
+            <Tab style={{ transform: "skewX(12px)" }}>
+              <span className="theme-color fw-bold">Gundam</span>{" "}
             </Tab>
-            <Tab>
-              <span className="theme-color">Transformers</span>{" "}
+            <Tab style={{ transform: "skewX(12px)" }}>
+              <span className="theme-color fw-bold">Transformers</span>{" "}
             </Tab>
-            <Tab>
-              <span className="theme-color">Macross</span>{" "}
+            <Tab style={{ transform: "skewX(12px)" }}>
+              <span className="theme-color fw-bold">Macross</span>{" "}
             </Tab>
           </TabList>
           <TabPanel>
@@ -76,7 +76,7 @@ const ShopByCategory = () => {
                               src={el.img}
                               className="h-250 rounded shp-img"
                             />
-                            <h4 className="teko-font pt-3 text-black">
+                            <h4 className="teko-font pt-3 text-white">
                               {el.name}
                             </h4>
                             <h3 className="teko-font theme-color">
@@ -131,7 +131,7 @@ const ShopByCategory = () => {
                               src={el.img}
                               className="h-250 rounded shp-img"
                             />
-                            <h4 className="teko-font pt-3 text-black">
+                            <h4 className="teko-font pt-3 text-white">
                               {el.name}
                             </h4>
                             <h3 className="teko-font theme-color">
@@ -185,7 +185,7 @@ const ShopByCategory = () => {
                               src={el.img}
                               className="h-250 rounded shp-img"
                             />
-                            <h4 className="teko-font pt-3 text-black">
+                            <h4 className="teko-font pt-3 text-white">
                               {el.name}
                             </h4>
                             <h3 className="teko-font theme-color">

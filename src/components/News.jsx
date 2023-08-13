@@ -1,10 +1,7 @@
 import React, { useRef } from "react";
 import "../css/news.css";
 import { FaPlay } from "react-icons/fa";
-import ROB from "../assets/images/rise_of_beasts_1.jpg";
 import TLN from "../assets/images/the_last_knight.jpg";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const News = () => {
   const modalRef = useRef(null);
@@ -25,20 +22,22 @@ const News = () => {
   return (
     <div className="py-5">
       <div className="container mx-auto rounded-3 shadow my-5 newsDiv d-flex flex-lg-row flex-column">
-        <div className="w-full w p-lg-5 p-2">
+        <div className="leftnewsbox p-lg-5 px-2 pt-5">
           <p className="d-flex flex-column flex-lg-row justify-content-between fw-bold">
             <span className="d-flex gap-3 theme-color">
               <span>NEW</span>
               <span>ROBOTS</span>
               <span>ACTION</span>
             </span>
-            <span className="text-black-50">AUGUST 11, 2023</span>
+            <span className="text-white-50">AUGUST 11, 2023</span>
           </p>
           <span className="theme-bg rounded-5 text-white px-2">
-            Context Movie Review
+            Context Review
           </span>
-          <h2 className="teko-font pt-3">Transformers The Last Knight</h2>
-          <p className="text-dark py-3 fw-medium">
+          <h2 className="teko-font pt-3 text-white">
+            Transformers The Last Knight
+          </h2>
+          <p className="text-white py-3 fw-medium">
             Transformers The Last Knight is a 2017 American science fiction
             action film directed by Michael Bay. It is the fifth installment in
             the live-action Transformers film series, and the sequel to
@@ -53,7 +52,7 @@ const News = () => {
             help of the Knights of Iacon, a group of Transformers who have been
             hiding on Earth. The Knights give Merlin a staff that will allow him
             to control Dragonstorm, a giant dragon-like Transformer. With
-            Dragonstorm's help, King Arthur is victorious.
+            Dragonstorm's help, King Arthur is victorious...
           </p>
           <div className="d-flex gap-2 align-items-center">
             <button
@@ -64,10 +63,10 @@ const News = () => {
             >
               <FaPlay></FaPlay>
             </button>{" "}
-            <span className="theme-color">View Trailer</span>
+            <span className="theme-color fw-bold">View Trailer</span>
           </div>
         </div>
-        <div className="newsimgbox w-full d-flex align-items-center justify-content-center m-1">
+        <div className="newsimgbox w-full d-flex align-items-center justify-content-center p-lg-5 px-2 py-5">
           <img src={TLN} alt="transformer image" className="rounded-3 w-100" />
         </div>
 

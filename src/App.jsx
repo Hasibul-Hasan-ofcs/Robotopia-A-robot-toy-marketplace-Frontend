@@ -1,14 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavigationBar from "./components/NavigationBar";
-import { Helmet } from "react-helmet";
+import "./App.css";
+import Lenis from "@studio-freight/lenis";
 
 function App() {
   const [count, setCount] = useState(0);
+  const lenis = new Lenis();
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 
   return (
     <div className="App min-vh-100 d-flex flex-column justify-content-between">

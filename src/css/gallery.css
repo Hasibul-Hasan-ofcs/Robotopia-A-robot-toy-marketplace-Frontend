@@ -39,9 +39,9 @@
 }
 
 .smallsquare {
-  max-width: 33.333%;
+  max-width: 50%;
   height: auto;
-  flex: 0 0 33.333%;
+  flex: 0 0 50%;
   padding-top: 20%;
   display: grid;
   position: relative;

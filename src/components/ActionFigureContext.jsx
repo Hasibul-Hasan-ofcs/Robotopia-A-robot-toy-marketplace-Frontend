@@ -15,10 +15,10 @@ const macross =
 
 const ActionFigureContext = () => {
   return (
-    <div className="py-5 my-5 dark_bg01 " id="gallery">
+    <div className="py-5" id="gallery">
       <div className="container py-5 mx-auto">
-        <h2 className="orbitron-font py-5 fw-bold text-center text-white">
-          <span className="theme-color">Action Figure</span> Contexts
+        <h2 className="bebas-font py-5 fw-bold text-center text-white text-uppercase">
+          Action Figure Contexts
         </h2>
 
         <div className="">
