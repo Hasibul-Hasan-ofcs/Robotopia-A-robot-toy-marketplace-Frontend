@@ -42,7 +42,7 @@ const HeaderRv = () => {
         </MouseParallax>
 
         <MouseParallax strength={0.01} isAbsolutelyPositioned>
-          <div className="header-right">
+          <div className="header-right d-lg-block d-none">
             <img src={Bee} alt="bee car" className="img-area2" />
           </div>
         </MouseParallax>

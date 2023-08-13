@@ -27,9 +27,9 @@ const ShopByCategory = () => {
   return (
     <div className="py-5" id="gallery">
       <div className="container mx-auto">
-        <h2 className="bebas-font py-5 fw-bold text-center text-white">
-          View Toy Category
-        </h2>
+        <h1 className="bebas-font py-5 fw-bold text-center text-white">
+          View By Category
+        </h1>
 
         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList>
@@ -52,7 +52,10 @@ const ShopByCategory = () => {
               }}
               modules={[Pagination]}
               className="mySwiper"
-              style={{ paddingBottom: "40px" }}
+              style={{
+                paddingBottom: "40px",
+                "--swiper-pagination-bullet-inactive-color": "#fff",
+              }}
               breakpoints={{
                 0: {
                   slidesPerView: 1,

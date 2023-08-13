@@ -39,7 +39,7 @@ const Blogs = () => {
   ];
 
   return (
-    <div className="">
+    <div className="" id="blogs-top">
       <BannerCommon pageName="Blogs"></BannerCommon>
       <div className="container py-5 d-flex flex-column gap-3">
         <div className="row mx-0">

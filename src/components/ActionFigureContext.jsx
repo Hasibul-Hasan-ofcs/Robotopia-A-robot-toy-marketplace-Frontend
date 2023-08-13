@@ -17,9 +17,9 @@ const ActionFigureContext = () => {
   return (
     <div className="py-5" id="gallery">
       <div className="container py-5 mx-auto">
-        <h2 className="bebas-font py-5 fw-bold text-center text-white text-uppercase">
+        <h1 className="bebas-font py-5 fw-bold text-center text-white text-uppercase">
           Action Figure Contexts
-        </h2>
+        </h1>
 
         <div className="">
           <div className="Card rounded-4 p-3 mb-4">
@@ -34,7 +34,7 @@ const ActionFigureContext = () => {
             />
             <h1 className="teko-font theme-color fw-bolder">TransFormers</h1>
             <p className="pt-3 pb-5 text-justify">
-              <span className="teko-font fw-bold fs-20">{transformers}</span>
+              <span className="teko-font fw-medium fs-20">{transformers}</span>
               &nbsp;{}
             </p>
 
@@ -50,7 +50,7 @@ const ActionFigureContext = () => {
             <h1 className="teko-font theme-color fw-bolder">Gundam</h1>
 
             <p className="pt-3 pb-5 text-justify">
-              <span className="teko-font fw-bold  fs-20">{gundam}</span>
+              <span className="teko-font fw-medium fs-20">{gundam}</span>
               &nbsp;{}
             </p>
 
@@ -66,7 +66,7 @@ const ActionFigureContext = () => {
             <h1 className="teko-font theme-color fw-bolder">Macross</h1>
 
             <p className="pt-3 pb-5 text-justify">
-              <span className="teko-font fw-bold  fs-20">{macross}</span>
+              <span className="teko-font fw-medium fs-20">{macross}</span>
               &nbsp;{}
             </p>
           </div>

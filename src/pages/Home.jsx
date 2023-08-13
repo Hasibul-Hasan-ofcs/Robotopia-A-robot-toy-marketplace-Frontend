@@ -11,6 +11,8 @@ import HeaderRv from "../components/HeaderRv.jsx";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider.jsx";
 import InStock from "../components/InStock.jsx";
+import Contributors from "../components/Contributors.jsx";
+import Blogs from "../components/Blogs.jsx";
 
 const Home = () => {
   const { introLoader, setIntroLoader } = useContext(AuthContext);
@@ -39,6 +41,8 @@ const Home = () => {
       <InStock></InStock>
       <News></News>
       <ShopByCategory></ShopByCategory>
+      <Contributors></Contributors>
+      <Blogs></Blogs>
       <NewsLetter></NewsLetter>
     </div>
   );

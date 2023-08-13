@@ -1,0 +1,29 @@
+.blog_home_card {
+  min-height: 200px;
+  /* width: 300px; */
+  border-radius: 15px;
+  position: relative;
+  background: #313646;
+  overflow-y: visible;
+  cursor: pointer;
+}
+
+.blog_home_card div .img {
+  width: 300px;
+}
+
+.blog_home_card div .img img {
+  width: 100%;
+}
+
+.blog_home_card div div h2 {
+  letter-spacing: 1px;
+}
+
+.blog_link {
+  font-weight: bold;
+}
+
+.blog_link:hover {
+  text-decoration: underline;
+}
